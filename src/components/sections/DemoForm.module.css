@@ -192,6 +192,11 @@
   text-underline-offset: 2px;
 }
 
+.legal a:hover,
+.legal a:focus-visible {
+  opacity: 0.7;
+}
+
 .success {
   display: flex;
   flex-direction: column;

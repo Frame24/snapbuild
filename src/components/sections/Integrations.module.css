@@ -14,6 +14,8 @@
   flex-direction: column;
   align-items: flex-start;
   gap: calc(20 / var(--fluid-base-desktop) * 1vw);
+  min-width: 0;
+  width: 100%;
 }
 
 .heading {
@@ -107,14 +109,16 @@
     box-shadow 0.4s var(--ease-out);
 }
 
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(29, 22, 40, 0.08);
-}
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(29, 22, 40, 0.08);
+  }
 
-.card:hover .mark {
-  background: #000;
-  color: #fff;
+  .card:hover .mark {
+    background: #000;
+    color: #fff;
+  }
 }
 
 .mark {
@@ -193,6 +197,8 @@
 
   .filters {
     width: 100%;
+    min-width: 0;
+    max-width: 100%;
     flex-wrap: nowrap;
     overflow-x: auto;
     overscroll-behavior-inline: contain;
@@ -253,7 +259,9 @@
   }
 
   .filters {
-    width: calc(100% + calc(32 / var(--fluid-base-mobile) * 1vw));
+    width: auto;
+    max-width: none;
+    align-self: stretch;
     margin-inline: calc(-16 / var(--fluid-base-mobile) * 1vw);
     padding-inline: calc(16 / var(--fluid-base-mobile) * 1vw);
     gap: calc(2 / var(--fluid-base-mobile) * 1vw);
@@ -273,11 +281,6 @@
   .card {
     padding: calc(16 / var(--fluid-base-mobile) * 1vw);
     border-radius: 16px;
-  }
-
-  .card:hover {
-    transform: none;
-    box-shadow: none;
   }
 
   .name {

@@ -92,6 +92,16 @@ export function Header() {
       id="header"
       className={[styles.header, scrolled ? styles.scrolled : ''].filter(Boolean).join(' ')}
     >
+      {menuOpen ? (
+        <button
+          type="button"
+          className={styles.backdrop}
+          aria-label="Закрыть меню"
+          tabIndex={-1}
+          onClick={closeMenu}
+        />
+      ) : null}
+
       <div className={styles.bar}>
         <a className={styles.logo} href="#hero" aria-label="Снэпбилд">
           <img

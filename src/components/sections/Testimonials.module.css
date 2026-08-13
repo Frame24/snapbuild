@@ -69,7 +69,8 @@
     opacity 0.3s var(--ease-out);
 }
 
-.arrow:hover:not(:disabled) {
+.arrow:hover:not(:disabled),
+.arrow:focus-visible:not(:disabled) {
   background: #000;
   color: #fff;
 }
@@ -99,6 +100,8 @@
 }
 
 .scroller {
+  min-width: 0;
+  width: 100%;
   overflow-x: auto;
   scrollbar-width: none;
   cursor: grab;
@@ -135,6 +138,13 @@
   background: var(--color-surface);
   border-radius: var(--radius-card);
   scroll-snap-align: start;
+  transition: box-shadow 0.3s var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    box-shadow: 0 12px 32px rgba(29, 22, 40, 0.06);
+  }
 }
 
 .quote {
@@ -207,7 +217,14 @@
     transform 0.3s var(--ease-out);
 }
 
-.dotActive {
+.dot:hover,
+.dot:focus-visible {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.dotActive,
+.dotActive:hover,
+.dotActive:focus-visible {
   background: #000;
   transform: scale(1.2);
 }

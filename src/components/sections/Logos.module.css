@@ -163,6 +163,11 @@
   .logos[data-running] .track {
     animation-play-state: running;
   }
+
+  .logos[data-running]:hover .track,
+  .logos[data-running]:focus-within .track {
+    animation-play-state: paused;
+  }
 }
 
 @keyframes marquee-scroll {

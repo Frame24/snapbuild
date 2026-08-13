@@ -7,8 +7,15 @@
 }
 
 .bar,
-.menu {
+.menu,
+.backdrop {
   pointer-events: auto;
+}
+
+.bar,
+.menu {
+  position: relative;
+  z-index: 1;
 }
 
 .bar {
@@ -84,7 +91,6 @@
 .navLink:hover,
 .navLink:focus-visible {
   background: rgba(0, 0, 0, 0.045);
-  outline: none;
 }
 
 .actions {
@@ -120,7 +126,17 @@
 .demo:focus-visible {
   background: #242424;
   transform: translateY(-1px);
-  outline: none;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  padding: 0;
+  border: 0;
+  background: rgba(20, 20, 20, 0.24);
+  cursor: pointer;
+  pointer-events: auto;
 }
 
 .burger {
@@ -134,6 +150,12 @@
   border-radius: 12px;
   background: transparent;
   cursor: pointer;
+  transition: background-color 180ms ease;
+}
+
+.burger:hover,
+.burger:focus-visible {
+  background: rgba(0, 0, 0, 0.045);
 }
 
 .burgerIcon {
@@ -217,7 +239,8 @@
   transition: background var(--duration-fast) ease;
 }
 
-.menuLink:hover {
+.menuLink:hover,
+.menuLink:focus-visible {
   background: rgba(0, 0, 0, 0.04);
 }
 
@@ -239,7 +262,8 @@
   transition: background-color 180ms ease;
 }
 
-.menuDemo:hover {
+.menuDemo:hover,
+.menuDemo:focus-visible {
   background: #242424;
 }
 
@@ -315,7 +339,17 @@
   }
 
   .menu {
-    right: 20px;
+    left: 16px;
+    right: 16px;
+    width: auto;
+    min-width: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .demo:hover,
+  .demo:focus-visible {
+    transform: none;
   }
 }
 
@@ -331,8 +365,9 @@
   }
 
   .menu {
-    right: 16px;
-    min-width: calc(200 / var(--fluid-base-mobile) * 1vw);
+    left: 12px;
+    right: 12px;
+    min-width: 0;
   }
 
   .menuLink {

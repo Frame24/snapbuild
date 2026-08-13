@@ -84,7 +84,8 @@
   transition: opacity var(--duration-fast) ease;
 }
 
-.link:hover {
+.link:hover,
+.link:focus-visible {
   opacity: 0.7;
 }
 
@@ -124,7 +125,8 @@
   transition: opacity var(--duration-fast) ease;
 }
 
-.email:hover {
+.email:hover,
+.email:focus-visible {
   opacity: 0.7;
 }
 

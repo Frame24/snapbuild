@@ -40,7 +40,8 @@
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
 }
 
-.primary:hover {
+.primary:hover,
+.primary:focus-visible {
   background: var(--btn-primary-bg-hover);
 }
 
@@ -49,7 +50,8 @@
   color: var(--btn-secondary-fg);
 }
 
-.secondary:hover {
+.secondary:hover,
+.secondary:focus-visible {
   background: var(--btn-secondary-bg-hover);
   transform: translateY(-1px);
 }
@@ -58,4 +60,21 @@
   opacity: 0.5;
   cursor: not-allowed;
   transform: none;
+}
+
+.primary:disabled:hover,
+.primary:disabled:focus-visible {
+  background: var(--btn-primary-bg);
+}
+
+.secondary:disabled:hover,
+.secondary:disabled:focus-visible {
+  background: var(--btn-secondary-bg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .secondary:hover,
+  .secondary:focus-visible {
+    transform: none;
+  }
 }

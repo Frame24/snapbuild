@@ -76,7 +76,8 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
-  height: 100px;
+  min-height: 100px;
+  height: auto;
   padding: 16px 0 0;
 }
 
@@ -130,6 +131,7 @@
 
   .copy {
     height: auto;
+    min-height: 0;
   }
 
   .name {

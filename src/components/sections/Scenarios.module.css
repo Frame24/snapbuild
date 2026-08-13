@@ -144,8 +144,10 @@
   transition: background 0.3s var(--ease-out);
 }
 
-.step:hover {
-  background: #ebebee;
+@media (hover: hover) and (pointer: fine) {
+  .step:hover {
+    background: #ebebee;
+  }
 }
 
 .num {
@@ -253,7 +255,6 @@
 .cta:focus-visible {
   background: #242424;
   transform: translateY(-1px);
-  outline: none;
 }
 
 @media (max-width: 1023px) {
@@ -283,6 +284,8 @@
 
   .tabs {
     width: 100%;
+    min-width: 0;
+    max-width: 100%;
     overflow-x: auto;
     overscroll-behavior-inline: contain;
     scrollbar-width: none;
@@ -392,7 +395,9 @@
   }
 
   .tabs {
-    width: calc(100% + calc(32 / var(--fluid-base-mobile) * 1vw));
+    width: auto;
+    max-width: none;
+    align-self: stretch;
     margin-inline: calc(-16 / var(--fluid-base-mobile) * 1vw);
     padding-inline: calc(16 / var(--fluid-base-mobile) * 1vw);
     gap: calc(2 / var(--fluid-base-mobile) * 1vw);

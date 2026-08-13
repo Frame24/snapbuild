@@ -1,5 +1,7 @@
 .app {
   min-height: 100svh;
+  width: 100%;
+  overflow-x: clip;
   background: var(--color-bg-painted);
   color: var(--color-text);
 }

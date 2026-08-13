@@ -57,6 +57,17 @@
   background: var(--color-surface-soft);
   border-radius: 20px;
   padding: calc(20 / var(--fluid-base-desktop) * 1vw);
+  transition: background-color 0.3s var(--ease-out);
+}
+
+.item:focus-within {
+  background: #f0f0f2;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .item:hover {
+    background: #f0f0f2;
+  }
 }
 
 .head {

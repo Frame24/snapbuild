@@ -1,14 +1,30 @@
-import { useId, useState } from 'react'
+import { useEffect, useId, useRef, useState } from 'react'
 import { useReveal } from '../../hooks/useReveal'
 import { SCENARIOS } from '../../content/scenarios'
 import styles from './Scenarios.module.css'
 
 export function Scenarios() {
   const sectionRef = useReveal<HTMLElement>()
+  const tabsRef = useRef<HTMLDivElement>(null)
   const baseId = useId()
   const [index, setIndex] = useState(0)
   const scenario = SCENARIOS[index]
   const last = SCENARIOS.length - 1
+
+  useEffect(() => {
+    const tabs = tabsRef.current
+    if (!tabs || !window.matchMedia('(max-width: 1023px)').matches) return
+    const active = tabs.querySelector<HTMLElement>('[aria-selected="true"]')
+    if (!active) return
+    const reduceMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)',
+    ).matches
+    active.scrollIntoView({
+      inline: 'center',
+      block: 'nearest',
+      behavior: reduceMotion ? 'auto' : 'smooth',
+    })
+  }, [index])
 
   return (
     <section
@@ -28,6 +44,7 @@ export function Scenarios() {
       </header>
 
       <div
+        ref={tabsRef}
         className={styles.tabs}
         role="tablist"
         aria-label="Команды"

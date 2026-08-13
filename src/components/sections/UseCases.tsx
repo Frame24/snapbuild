@@ -36,7 +36,7 @@ export function UseCases() {
     if (tabList.contains(document.activeElement)) {
       activeTab.focus()
     }
-    if (!window.matchMedia('(min-width: 768px) and (max-width: 1023px)').matches) {
+    if (!window.matchMedia('(max-width: 1023px)').matches) {
       return
     }
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches

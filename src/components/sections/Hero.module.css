@@ -87,7 +87,8 @@
   transition: transform var(--duration-fast) var(--ease-out);
 }
 
-.cta:hover {
+.cta:hover,
+.cta:focus-visible {
   transform: translateY(-1px);
 }
 
@@ -259,5 +260,10 @@
     opacity: 1;
     transform: none;
     animation: none;
+  }
+
+  .cta:hover,
+  .cta:focus-visible {
+    transform: none;
   }
 }

@@ -1,6 +1,8 @@
 .cta {
   position: relative;
+  isolation: isolate;
   overflow: hidden;
+  margin: 12px;
   border-radius: 16px;
   background-color: #fff;
   background-image: linear-gradient(
@@ -83,9 +85,11 @@
   flex-direction: column;
   align-items: center;
   gap: 24px;
-  width: 1080px;
+  width: min(1080px, 100%);
   max-width: 100%;
-  margin: 0 80px;
+  margin: 0;
+  padding-inline: 40px;
+  box-sizing: border-box;
 }
 
 .intro {
@@ -219,6 +223,7 @@
     width: auto;
     max-width: calc(658 / var(--fluid-base-tablet) * 1vw);
     margin: 0 auto;
+    padding-inline: 24px;
     gap: calc(32 / var(--fluid-base-tablet) * 1vw);
   }
 
@@ -253,13 +258,15 @@
 
 @media (max-width: 767px) {
   .cta {
+    margin: 0 16px 16px;
     padding: calc(64 / var(--fluid-base-mobile) * 1vw)
-      calc(32 / var(--fluid-base-mobile) * 1vw);
+      calc(16 / var(--fluid-base-mobile) * 1vw);
     border-radius: 16px;
   }
 
   .content {
     max-width: none;
+    padding-inline: 0;
     gap: calc(24 / var(--fluid-base-mobile) * 1vw);
   }
 

@@ -52,7 +52,18 @@ export function Integrations() {
                   .filter(Boolean)
                   .join(' ')}
                 aria-pressed={active}
-                onClick={() => setFilter(category)}
+                onClick={(event) => {
+                  setFilter(category)
+                  if (!window.matchMedia('(max-width: 1023px)').matches) return
+                  const reduceMotion = window.matchMedia(
+                    '(prefers-reduced-motion: reduce)',
+                  ).matches
+                  event.currentTarget.scrollIntoView({
+                    inline: 'center',
+                    block: 'nearest',
+                    behavior: reduceMotion ? 'auto' : 'smooth',
+                  })
+                }}
               >
                 {category}
               </button>
