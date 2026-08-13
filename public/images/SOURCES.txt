@@ -1,6 +1,28 @@
 Картинки и логотипы скачаны с https://snapbuild.ru/.
-Использовать можно: это подтвердили для задания.
-Лежат здесь локально, с сайта по прямой ссылке не тянем.
+Лежат здесь локально, с сайта по прямой ссылке не подтягиваются.
+В рамках проекта получено разрешение от правообладателя.
 
 Hero: hero-snapbuild-2026-08-07-v2.webp
 Логотип: logo.svg (тот же, что 582db07d8ccd60da.svg на проде)
+
+Marquee:
+- 5cd01de0b6a5e001.svg (Ozon)
+- ee341193d7cf46d6.svg (HeadHunter)
+- logo-avito.svg
+- logo-cian.svg
+- logo-lenta.svg
+
+Process:
+- 84a4450b3827bc21.webp
+- process-flexible-configuration.webp
+- process-flexible-configuration-tablet.webp
+- process-flexible-configuration-mobile.webp
+- afe03eb4a67d5dfb.webp
+
+Use Cases: use-cases-tab1-item1-v2.webp, use-cases-tab1-item2.webp,
+use-cases-tab1-item3.webp, use-cases-web-04.webp, use-cases-img-01.webp,
+use-cases-tab2-item2.webp, use-cases-tab2-item3.webp, use-cases-tab2-item4.webp,
+use-cases-vid-01.webp, use-cases-tab3-item2.webp, use-cases-tab3-item3.webp,
+use-cases-tab3-item4.webp, use-cases-tab4-item1.webp, use-cases-tab4-item2.webp,
+use-cases-tab4-item3.webp, use-cases-tab4-item4.webp, use-cases-pres-01.jpg,
+use-cases-tab5-item2.webp, use-cases-tab5-item3.webp, use-cases-tab5-item4.webp
