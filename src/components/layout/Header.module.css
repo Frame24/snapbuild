@@ -20,19 +20,21 @@
   margin: 16px auto 0;
   padding: 7px 9px 7px 14px;
   border: 1px solid transparent;
-  border-radius: var(--radius-header);
+  border-radius: 16px;
   background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: none;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   transition:
-    margin var(--duration-base) var(--ease-out),
-    background-color var(--duration-base) ease,
-    border-color var(--duration-base) ease,
-    box-shadow var(--duration-base) ease;
+    margin 300ms var(--ease-out),
+    background-color 300ms ease,
+    border-color 300ms ease,
+    box-shadow 300ms ease;
 }
 
 .scrolled .bar {
   border-color: rgba(0, 0, 0, 0.045);
+  background-color: rgba(255, 255, 255, 0.8);
   box-shadow: 0 6px 22px rgba(29, 22, 40, 0.055);
 }
 
@@ -55,20 +57,22 @@
   align-items: center;
   gap: 0;
   margin-inline: auto;
+  padding: 0;
+  background: transparent;
 }
 
 .navLink {
   padding: 8px 10px;
   border-radius: 9px;
-  color: var(--color-text);
+  color: #000;
   font-size: 12px;
   line-height: 1.4;
   font-weight: var(--font-weight-medium);
   white-space: nowrap;
   text-decoration: none;
   transition:
-    background-color var(--duration-fast) ease,
-    color var(--duration-fast) ease;
+    background-color 180ms ease,
+    color 180ms ease;
 }
 
 .navLink:hover,
@@ -89,19 +93,21 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 4px;
   min-height: 0;
   padding: 10px 20px;
-  border-radius: var(--radius-button);
+  border-radius: 12px;
   background: #000;
   color: #fff;
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: var(--font-weight-semibold);
-  letter-spacing: -0.02em;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
   text-decoration: none;
+  box-shadow: none;
   transition:
-    transform var(--duration-fast) ease,
-    background-color var(--duration-fast) ease;
+    transform 180ms ease,
+    background-color 180ms ease;
 }
 
 .demo:hover,
@@ -216,15 +222,15 @@
   margin-top: 8px;
   width: 100%;
   padding: 14px 20px;
-  border-radius: var(--radius-button-lg);
+  border-radius: 12px;
   background: #000;
   color: #fff;
   font-size: 14px;
   line-height: 20px;
-  font-weight: var(--font-weight-semibold);
+  font-weight: 600;
   letter-spacing: -0.5px;
   text-decoration: none;
-  transition: background-color var(--duration-fast) ease;
+  transition: background-color 180ms ease;
 }
 
 .menuDemo:hover {

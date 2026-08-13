@@ -43,8 +43,8 @@ export function Hero() {
               className={styles.shot}
               src={assetUrl('images/hero-snapbuild-2026-08-07-v2.webp')}
               alt="Интерфейс Снэпбилда с материалами в фирменном стиле"
-              width={1190}
-              height={726}
+              width={1316}
+              height={693}
               decoding="async"
               fetchPriority="high"
             />
