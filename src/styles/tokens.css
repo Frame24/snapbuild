@@ -50,6 +50,7 @@
   /* Satoshi вместо TT Commons Pro с прода */
   --font-sans: 'Satoshi', system-ui, sans-serif;
   --font-weight-regular: 400;
+  --font-weight-heading: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
@@ -81,8 +82,7 @@
   --card-gap: calc(32 / var(--fluid-base-desktop) * 1vw);
 
   /* Размеры текста */
-  --text-section-title: calc(52 / var(--fluid-base-desktop) * 1vw);
-  --text-section-title-weight: 550;
+  --text-section-title: calc(46 / var(--fluid-base-desktop) * 1vw);
   --text-section-title-tracking: calc(-1 / var(--fluid-base-desktop) * 1vw);
   --text-body: max(14px, calc(16 / var(--fluid-base-desktop) * 1vw));
   --text-small: max(13px, calc(14 / var(--fluid-base-desktop) * 1vw));
@@ -111,7 +111,7 @@
     --section-gap: calc(40 / var(--fluid-base-tablet) * 1vw);
     --card-pad: calc(24 / var(--fluid-base-tablet) * 1vw);
     --card-gap: calc(24 / var(--fluid-base-tablet) * 1vw);
-    --text-section-title: calc(52 / var(--fluid-base-tablet) * 1vw);
+    --text-section-title: calc(46 / var(--fluid-base-tablet) * 1vw);
     --text-section-title-tracking: calc(-1 / var(--fluid-base-tablet) * 1vw);
     --text-body: max(14px, calc(16 / var(--fluid-base-tablet) * 1vw));
     --text-small: max(13px, calc(14 / var(--fluid-base-tablet) * 1vw));
@@ -129,7 +129,6 @@
     --card-pad: calc(16 / var(--fluid-base-mobile) * 1vw);
     --card-gap: calc(16 / var(--fluid-base-mobile) * 1vw);
     --text-section-title: calc(32 / var(--fluid-base-mobile) * 1vw);
-    --text-section-title-weight: 550;
     --text-section-title-tracking: calc(-0.5 / var(--fluid-base-mobile) * 1vw);
     --text-body: max(14px, calc(14 / var(--fluid-base-mobile) * 1vw));
     --text-small: max(13px, calc(14 / var(--fluid-base-mobile) * 1vw));

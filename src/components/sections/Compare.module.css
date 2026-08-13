@@ -61,7 +61,7 @@
   justify-content: center;
   gap: calc(4 / var(--fluid-base-desktop) * 1vw);
   padding-inline: calc(32 / var(--fluid-base-desktop) * 1vw);
-  font-weight: 500;
+  font-weight: var(--font-weight-heading);
   font-size: calc(14 / var(--fluid-base-desktop) * 1vw);
   line-height: calc(20 / 14);
   color: var(--color-text);
@@ -73,7 +73,7 @@
 .cellLabel {
   justify-content: flex-start;
   text-align: left;
-  font-weight: 600;
+  font-weight: var(--font-weight-heading);
 }
 
 .cell:nth-child(3),
@@ -87,7 +87,7 @@
   align-items: center;
   justify-content: center;
   gap: calc(8 / var(--fluid-base-desktop) * 1vw);
-  font-weight: 600;
+  font-weight: var(--font-weight-heading);
   font-size: calc(16 / var(--fluid-base-desktop) * 1vw);
   line-height: calc(24 / 16);
   text-align: center;
@@ -98,7 +98,7 @@
   align-items: flex-start;
   justify-content: center;
   text-align: left;
-  font-weight: 600;
+  font-weight: var(--font-weight-heading);
   color: rgba(0, 0, 0, 0.6);
 }
 

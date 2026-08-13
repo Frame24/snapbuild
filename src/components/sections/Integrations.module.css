@@ -71,7 +71,7 @@
 
 .name {
   margin: 0;
-  font-weight: 500;
+  font-weight: var(--font-weight-heading);
   font-size: calc(20 / var(--fluid-base-desktop) * 1vw);
   line-height: 1.4;
   letter-spacing: calc(-0.5 / var(--fluid-base-desktop) * 1vw);

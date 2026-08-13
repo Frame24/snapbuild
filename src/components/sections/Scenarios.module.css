@@ -31,7 +31,7 @@
 .heading {
   margin: 0;
   color: var(--color-text);
-  font-weight: 500;
+  font-weight: var(--font-weight-heading);
   font-size: calc(32 / var(--fluid-base-desktop) * 1vw);
   line-height: 1.25;
   letter-spacing: calc(-0.8 / var(--fluid-base-desktop) * 1vw);
@@ -110,7 +110,7 @@
 
 .stepTitle {
   margin: 0;
-  font-weight: 500;
+  font-weight: var(--font-weight-heading);
   font-size: var(--text-body);
   line-height: 1.4;
   letter-spacing: calc(-0.3 / var(--fluid-base-desktop) * 1vw);

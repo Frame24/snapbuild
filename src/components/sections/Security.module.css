@@ -3,7 +3,7 @@
 }
 
 .title {
-  line-height: calc(64 / 52);
+  line-height: 1.2308;
   letter-spacing: calc(-1.25 / var(--fluid-base-desktop) * 1vw);
 }
 
@@ -54,7 +54,7 @@
   margin: 0;
   color: var(--color-text);
   text-align: left;
-  font-weight: 500;
+  font-weight: var(--font-weight-heading);
   font-size: calc(24 / var(--fluid-base-desktop) * 1vw);
   line-height: 1.3334;
   letter-spacing: calc(-1 / var(--fluid-base-desktop) * 1vw);

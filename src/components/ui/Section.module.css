@@ -20,7 +20,7 @@
 .title {
   margin: 0;
   color: var(--color-text);
-  font-weight: var(--text-section-title-weight);
+  font-weight: var(--font-weight-heading);
   font-size: var(--text-section-title);
   line-height: 1.2308;
   letter-spacing: var(--text-section-title-tracking);

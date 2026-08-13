@@ -134,7 +134,7 @@
 
 .name {
   margin: 0;
-  font-weight: 500;
+  font-weight: var(--font-weight-heading);
   font-size: calc(24 / var(--fluid-base-desktop) * 1vw);
   line-height: 1.3334;
   letter-spacing: calc(-1 / var(--fluid-base-desktop) * 1vw);
