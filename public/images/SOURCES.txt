@@ -26,3 +26,12 @@ use-cases-vid-01.webp, use-cases-tab3-item2.webp, use-cases-tab3-item3.webp,
 use-cases-tab3-item4.webp, use-cases-tab4-item1.webp, use-cases-tab4-item2.webp,
 use-cases-tab4-item3.webp, use-cases-tab4-item4.webp, use-cases-pres-01.jpg,
 use-cases-tab5-item2.webp, use-cases-tab5-item3.webp, use-cases-tab5-item4.webp
+
+Compare: a4ce0581ce7807b6.svg (галочка в таблице)
+
+Security:
+- security-approved-models.webp, security-approved-models-mobile-v2.jpg
+- security-private-cloud.webp, security-private-cloud-mobile-v2.jpg
+- security-ai-stack.webp, security-ai-stack-mobile-v2.jpg
+
+FAQ: c2663c497fb468e1.webp (иконка плюса в аккордеоне)
