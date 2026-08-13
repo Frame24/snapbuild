@@ -6,7 +6,7 @@
 .card {
   position: relative;
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: calc(20 / var(--fluid-base-desktop) * 1vw);
   background-color: #ffffff;
   background-image: linear-gradient(
     157deg,
@@ -25,7 +25,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 32px;
+  gap: calc(32 / var(--fluid-base-desktop) * 1vw);
   padding: calc(108 / var(--fluid-base-desktop) * 1vw)
     calc(40 / var(--fluid-base-desktop) * 1vw) 0;
 }
@@ -34,8 +34,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
-  margin-top: 16px;
+  gap: calc(20 / var(--fluid-base-desktop) * 1vw);
+  margin-top: calc(16 / var(--fluid-base-desktop) * 1vw);
   width: calc(984 / var(--fluid-base-desktop) * 1vw);
 }
 
@@ -43,9 +43,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: calc(16 / var(--fluid-base-desktop) * 1vw);
   width: 100%;
-  min-height: 260px;
+  min-height: calc(260 / var(--fluid-base-desktop) * 1vw);
 }
 
 .title {
@@ -82,7 +82,7 @@
   background: #ffffff;
   padding: calc(14 / var(--fluid-base-desktop) * 1vw)
     calc(22 / var(--fluid-base-desktop) * 1vw);
-  border-radius: 12px;
+  border-radius: calc(12 / var(--fluid-base-desktop) * 1vw);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
   transition: transform var(--duration-fast) var(--ease-out);
 }
@@ -112,7 +112,8 @@
   height: 100%;
   object-fit: cover;
   object-position: center top;
-  border-radius: 16px 16px 0 0;
+  border-radius: calc(16 / var(--fluid-base-desktop) * 1vw)
+    calc(16 / var(--fluid-base-desktop) * 1vw) 0 0;
 }
 
 :global(html.hero-motion-pending:not(.hero-motion-ready)) .heading,
