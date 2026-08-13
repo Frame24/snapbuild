@@ -135,7 +135,7 @@
 .result {
   margin: 0;
   color: var(--color-text-secondary);
-  font-size: calc(14 / var(--fluid-base-desktop) * 1vw);
+  font-size: var(--text-small);
   line-height: 1.4286;
   font-weight: 500;
 }
@@ -170,14 +170,14 @@
 .name {
   margin: 0;
   font-weight: 600;
-  font-size: calc(16 / var(--fluid-base-desktop) * 1vw);
+  font-size: var(--text-body);
   line-height: 1.4;
 }
 
 .role {
   margin: 0;
   color: var(--color-text-secondary);
-  font-size: calc(14 / var(--fluid-base-desktop) * 1vw);
+  font-size: var(--text-small);
   line-height: 1.4286;
   font-weight: 500;
 }
@@ -247,18 +247,6 @@
   .quote {
     font-size: calc(16 / var(--fluid-base-tablet) * 1vw);
   }
-
-  .result {
-    font-size: calc(14 / var(--fluid-base-tablet) * 1vw);
-  }
-
-  .name {
-    font-size: calc(16 / var(--fluid-base-tablet) * 1vw);
-  }
-
-  .role {
-    font-size: calc(14 / var(--fluid-base-tablet) * 1vw);
-  }
 }
 
 @media (max-width: 767px) {
@@ -295,18 +283,6 @@
   .quote {
     font-size: calc(15 / var(--fluid-base-mobile) * 1vw);
     letter-spacing: 0;
-  }
-
-  .result {
-    font-size: calc(13 / var(--fluid-base-mobile) * 1vw);
-  }
-
-  .name {
-    font-size: calc(14 / var(--fluid-base-mobile) * 1vw);
-  }
-
-  .role {
-    font-size: calc(13 / var(--fluid-base-mobile) * 1vw);
   }
 }
 

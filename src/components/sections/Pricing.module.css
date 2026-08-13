@@ -31,7 +31,7 @@
   color: var(--color-text);
   font-family: inherit;
   font-weight: 500;
-  font-size: calc(14 / var(--fluid-base-desktop) * 1vw);
+  font-size: var(--text-small);
   line-height: 1.4286;
   white-space: nowrap;
   cursor: pointer;
@@ -55,7 +55,7 @@
   padding: 2px 8px;
   border-radius: var(--radius-full);
   background: rgba(255, 255, 255, 0.16);
-  font-size: calc(11 / var(--fluid-base-desktop) * 1vw);
+  font-size: max(11px, calc(11 / var(--fluid-base-desktop) * 1vw));
   font-weight: 600;
   letter-spacing: 0;
 }
@@ -120,7 +120,7 @@
   border-radius: var(--radius-full);
   background: #000;
   color: #fff;
-  font-size: calc(12 / var(--fluid-base-desktop) * 1vw);
+  font-size: var(--text-caption);
   font-weight: 600;
   line-height: 1.4;
 }
@@ -143,7 +143,7 @@
 .desc {
   margin: 0;
   color: var(--color-text-secondary);
-  font-size: calc(14 / var(--fluid-base-desktop) * 1vw);
+  font-size: var(--text-small);
   line-height: 1.4286;
   font-weight: 500;
 }
@@ -165,7 +165,7 @@
 
 .per {
   color: var(--color-text-secondary);
-  font-size: calc(14 / var(--fluid-base-desktop) * 1vw);
+  font-size: var(--text-small);
   font-weight: 500;
 }
 
@@ -173,7 +173,7 @@
   margin: calc(-12 / var(--fluid-base-desktop) * 1vw) 0 0;
   min-height: 1.4286em;
   color: var(--color-text-secondary);
-  font-size: calc(12 / var(--fluid-base-desktop) * 1vw);
+  font-size: var(--text-caption);
   line-height: 1.4286;
 }
 
@@ -190,7 +190,7 @@
   display: flex;
   align-items: flex-start;
   gap: 8px;
-  font-size: calc(14 / var(--fluid-base-desktop) * 1vw);
+  font-size: var(--text-small);
   line-height: 1.4286;
   font-weight: 500;
 }
@@ -220,7 +220,7 @@
   background: #000;
   color: #fff;
   font-weight: 600;
-  font-size: calc(14 / var(--fluid-base-desktop) * 1vw);
+  font-size: var(--text-small);
   line-height: calc(20 / 14);
   letter-spacing: calc(-0.5 / var(--fluid-base-desktop) * 1vw);
   text-decoration: none;
@@ -259,11 +259,6 @@
   .toggleBtn {
     padding: calc(10 / var(--fluid-base-tablet) * 1vw)
       calc(14 / var(--fluid-base-tablet) * 1vw);
-    font-size: calc(14 / var(--fluid-base-tablet) * 1vw);
-  }
-
-  .save {
-    font-size: calc(11 / var(--fluid-base-tablet) * 1vw);
   }
 
   .grid {
@@ -282,18 +277,11 @@
   .badge {
     top: -10px;
     left: calc(24 / var(--fluid-base-tablet) * 1vw);
-    font-size: calc(12 / var(--fluid-base-tablet) * 1vw);
   }
 
   .name {
     font-size: calc(20 / var(--fluid-base-tablet) * 1vw);
     letter-spacing: calc(-0.5 / var(--fluid-base-tablet) * 1vw);
-  }
-
-  .desc,
-  .feature,
-  .cta {
-    font-size: calc(14 / var(--fluid-base-tablet) * 1vw);
   }
 
   .amount {
@@ -330,11 +318,6 @@
   .name {
     font-size: calc(16 / var(--fluid-base-mobile) * 1vw);
     letter-spacing: 0;
-  }
-
-  .desc,
-  .feature {
-    font-size: calc(14 / var(--fluid-base-mobile) * 1vw);
   }
 
   .amount {

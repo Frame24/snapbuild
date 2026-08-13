@@ -29,7 +29,7 @@
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  font-size: calc(16 / var(--fluid-base-desktop) * 1vw);
+  font-size: var(--text-body);
   line-height: 1.5;
   font-weight: 500;
 }
@@ -72,7 +72,7 @@
 
 .label {
   color: var(--color-text);
-  font-size: calc(14 / var(--fluid-base-desktop) * 1vw);
+  font-size: var(--text-small);
   line-height: 1.4286;
   font-weight: 500;
 }
@@ -89,7 +89,7 @@
   background-color: var(--color-surface-muted);
   color: var(--color-text);
   font-family: inherit;
-  font-size: calc(16 / var(--fluid-base-desktop) * 1vw);
+  font-size: max(16px, var(--text-body));
   line-height: 1.5;
   font-weight: 500;
   transition:
@@ -137,7 +137,7 @@
 
 .error {
   color: #c43b3b;
-  font-size: calc(13 / var(--fluid-base-desktop) * 1vw);
+  font-size: var(--text-caption);
   line-height: 1.4;
   font-weight: 500;
 }
@@ -158,7 +158,7 @@
 .legal {
   margin: 0;
   color: var(--color-text-secondary);
-  font-size: calc(13 / var(--fluid-base-desktop) * 1vw);
+  font-size: var(--text-caption);
   line-height: 1.4286;
 }
 
@@ -200,7 +200,7 @@
 .successTitle {
   margin: 0;
   font-weight: 500;
-  font-size: calc(24 / var(--fluid-base-desktop) * 1vw);
+  font-size: var(--text-card-title);
   line-height: 1.3334;
   letter-spacing: calc(-0.5 / var(--fluid-base-desktop) * 1vw);
 }
@@ -209,7 +209,7 @@
   margin: 0 0 calc(8 / var(--fluid-base-desktop) * 1vw);
   max-width: 32em;
   color: var(--color-text-secondary);
-  font-size: calc(16 / var(--fluid-base-desktop) * 1vw);
+  font-size: var(--text-body);
   line-height: 1.5;
   font-weight: 500;
 }
@@ -220,30 +220,12 @@
     gap: calc(24 / var(--fluid-base-tablet) * 1vw);
   }
 
-  .subtitle,
-  .point {
-    font-size: calc(16 / var(--fluid-base-tablet) * 1vw);
-  }
-
   .card {
     padding: calc(24 / var(--fluid-base-tablet) * 1vw);
-  }
-
-  .label,
-  .input,
-  .select,
-  .textarea {
-    font-size: calc(16 / var(--fluid-base-tablet) * 1vw);
   }
 }
 
 @media (max-width: 767px) {
-  .subtitle,
-  .point,
-  .successText {
-    font-size: calc(14 / var(--fluid-base-mobile) * 1vw);
-  }
-
   .card {
     padding: calc(16 / var(--fluid-base-mobile) * 1vw);
     border-radius: 16px;
@@ -256,16 +238,5 @@
 
   .form {
     gap: calc(12 / var(--fluid-base-mobile) * 1vw);
-  }
-
-  .label,
-  .input,
-  .select,
-  .textarea {
-    font-size: calc(16 / var(--fluid-base-mobile) * 1vw);
-  }
-
-  .successTitle {
-    font-size: calc(20 / var(--fluid-base-mobile) * 1vw);
   }
 }

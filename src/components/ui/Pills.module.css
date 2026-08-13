@@ -20,7 +20,7 @@
   color: var(--color-text);
   font-family: inherit;
   font-weight: 500;
-  font-size: calc(16 / var(--fluid-base-desktop) * 1vw);
+  font-size: var(--text-body);
   line-height: 1.5;
   white-space: nowrap;
   cursor: pointer;
@@ -65,7 +65,6 @@
     flex: 0 0 auto;
     padding: calc(10 / var(--fluid-base-tablet) * 1vw)
       calc(16 / var(--fluid-base-tablet) * 1vw);
-    font-size: calc(16 / var(--fluid-base-tablet) * 1vw);
   }
 }
 
@@ -83,7 +82,7 @@
   .item {
     padding: calc(6 / var(--fluid-base-mobile) * 1vw)
       calc(12 / var(--fluid-base-mobile) * 1vw);
-    font-size: calc(13 / var(--fluid-base-mobile) * 1vw);
+    font-size: var(--text-small);
   }
 }
 
