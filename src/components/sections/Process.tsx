@@ -1,32 +1,7 @@
+import { PROCESS_STEPS } from '../../content/process'
 import { assetUrl } from '../../lib/assets'
 import { useReveal } from '../../hooks/useReveal'
 import styles from './Process.module.css'
-
-const STEPS = [
-  {
-    name: 'Дизайн-система - ядро платформы',
-    nameMobile: 'Дизайн-система Снэпбилд',
-    desc: 'Ваши компоненты, цвета и шрифты - единственный источник стиля',
-    image: 'images/84a4450b3827bc21.webp',
-    alt: 'Компоненты, цвета и шрифты дизайн-системы в Снэпбилде',
-  },
-  {
-    name: 'Гибкая конфигурация',
-    nameMobile: 'Гибкая конфигурация',
-    desc: 'Правила бренда задаются один раз - работают в каждой генерации',
-    image: 'images/process-flexible-configuration.webp',
-    tablet: 'images/process-flexible-configuration-tablet.webp',
-    mobile: 'images/process-flexible-configuration-mobile.webp',
-    alt: 'Настройка правил бренда, которые применяются к каждой генерации',
-  },
-  {
-    name: 'Соответствие по умолчанию',
-    nameMobile: 'Соответствие по умолчанию',
-    desc: 'AI не может нарушить бренд: сайты, изображения, видео, баннеры и презентации - строго по вашим правилам',
-    image: 'images/afe03eb4a67d5dfb.webp',
-    alt: 'Материалы, которые всегда остаются в рамках бренд-правил',
-  },
-] as const
 
 export function Process() {
   const sectionRef = useReveal<HTMLElement>()
@@ -52,9 +27,9 @@ export function Process() {
       </div>
 
       <div className={styles.grid}>
-        {STEPS.map((step) => (
+        {PROCESS_STEPS.map((step) => (
           <article key={step.name} className={styles.card}>
-            {'mobile' in step && step.mobile && step.tablet ? (
+            {step.mobile && step.tablet ? (
               <picture className={styles.picture}>
                 <source
                   media="(max-width: 767px)"

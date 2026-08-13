@@ -1,5 +1,8 @@
 import { useMemo, useState } from 'react'
+import pills from '../ui/Pills.module.css'
 import { useReveal } from '../../hooks/useReveal'
+import { cx } from '../../lib/cx'
+import { centerInScroller } from '../../lib/media'
 import {
   INTEGRATIONS,
   INTEGRATION_CATEGORIES,
@@ -38,7 +41,7 @@ export function Integrations() {
         </div>
 
         <div
-          className={styles.filters}
+          className={cx(pills.list, pills.wrap)}
           role="group"
           aria-label="Категории интеграций"
         >
@@ -48,21 +51,11 @@ export function Integrations() {
               <button
                 key={category}
                 type="button"
-                className={[styles.filter, active ? styles.filterActive : '']
-                  .filter(Boolean)
-                  .join(' ')}
+                className={cx(pills.item, active && pills.itemActive)}
                 aria-pressed={active}
                 onClick={(event) => {
                   setFilter(category)
-                  if (!window.matchMedia('(max-width: 1023px)').matches) return
-                  const reduceMotion = window.matchMedia(
-                    '(prefers-reduced-motion: reduce)',
-                  ).matches
-                  event.currentTarget.scrollIntoView({
-                    inline: 'center',
-                    block: 'nearest',
-                    behavior: reduceMotion ? 'auto' : 'smooth',
-                  })
+                  centerInScroller(event.currentTarget)
                 }}
               >
                 {category}

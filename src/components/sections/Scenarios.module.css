@@ -36,49 +36,6 @@
   text-align: right;
 }
 
-.tabs {
-  display: inline-flex;
-  flex-direction: row;
-  align-self: flex-start;
-  gap: calc(8 / var(--fluid-base-desktop) * 1vw);
-}
-
-.tab {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: calc(10 / var(--fluid-base-desktop) * 1vw) 10px;
-  border: 0;
-  border-radius: 12px;
-  background: var(--color-surface-muted);
-  color: var(--color-text);
-  font-family: inherit;
-  font-weight: 500;
-  font-size: calc(16 / var(--fluid-base-desktop) * 1vw);
-  line-height: 1.5;
-  white-space: nowrap;
-  cursor: pointer;
-  user-select: none;
-  transition:
-    background 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-    color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-    scale 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.tab:hover {
-  background: #ebebee;
-}
-
-.tab:active {
-  scale: 0.975;
-}
-
-.tabActive,
-.tabActive:hover {
-  background: #000;
-  color: #fff;
-}
-
 .panel {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
@@ -299,27 +256,6 @@
     font-size: calc(16 / var(--fluid-base-tablet) * 1vw);
   }
 
-  .tabs {
-    width: 100%;
-    min-width: 0;
-    max-width: 100%;
-    overflow-x: auto;
-    overscroll-behavior-inline: contain;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .tabs::-webkit-scrollbar {
-    display: none;
-  }
-
-  .tab {
-    flex: 0 0 auto;
-    padding: calc(10 / var(--fluid-base-tablet) * 1vw)
-      calc(16 / var(--fluid-base-tablet) * 1vw);
-    font-size: calc(16 / var(--fluid-base-tablet) * 1vw);
-  }
-
   .panel {
     display: flex;
     flex-direction: column;
@@ -417,21 +353,6 @@
     line-height: 1.4286;
   }
 
-  .tabs {
-    width: auto;
-    max-width: none;
-    align-self: stretch;
-    margin-inline: calc(-16 / var(--fluid-base-mobile) * 1vw);
-    padding-inline: calc(16 / var(--fluid-base-mobile) * 1vw);
-    gap: calc(2 / var(--fluid-base-mobile) * 1vw);
-  }
-
-  .tab {
-    padding: calc(6 / var(--fluid-base-mobile) * 1vw)
-      calc(12 / var(--fluid-base-mobile) * 1vw);
-    font-size: calc(13 / var(--fluid-base-mobile) * 1vw);
-  }
-
   .panel {
     gap: calc(16 / var(--fluid-base-mobile) * 1vw);
     padding: calc(16 / var(--fluid-base-mobile) * 1vw);
@@ -487,10 +408,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .tab:active {
-    scale: 1;
-  }
-
   .cta:hover,
   .cta:focus-visible {
     transform: none;

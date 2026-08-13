@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { assetUrl } from '../../lib/assets'
+import { cx } from '../../lib/cx'
+import { prefersReducedMotion } from '../../lib/media'
 import { useDragScroll } from '../../hooks/useDragScroll'
 import { useReveal } from '../../hooks/useReveal'
 import { TESTIMONIALS } from '../../content/testimonials'
@@ -73,9 +75,7 @@ export function Testimonials() {
       const scroller = scrollerRef.current
       if (!scroller) return
       const cards = scroller.querySelectorAll<HTMLElement>('[data-card]')
-      const reduceMotion = window.matchMedia(
-        '(prefers-reduced-motion: reduce)',
-      ).matches
+      const reduceMotion = prefersReducedMotion()
       const behavior = reduceMotion ? 'auto' : 'smooth'
 
       if (index >= last) {
@@ -252,9 +252,7 @@ export function Testimonials() {
           <button
             key={item.id}
             type="button"
-            className={[styles.dot, index === active ? styles.dotActive : '']
-              .filter(Boolean)
-              .join(' ')}
+            className={cx(styles.dot, index === active && styles.dotActive)}
             aria-label={`Отзыв ${index + 1}`}
             aria-current={index === active ? 'true' : undefined}
             onClick={() => goTo(index)}

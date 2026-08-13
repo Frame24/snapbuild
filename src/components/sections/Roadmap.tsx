@@ -1,4 +1,5 @@
 import type { CSSProperties } from 'react'
+import { cx } from '../../lib/cx'
 import { useReveal } from '../../hooks/useReveal'
 import { useDragScroll } from '../../hooks/useDragScroll'
 import { ROADMAP_ITEMS, ROADMAP_PROGRESS } from '../../content/roadmap'
@@ -28,9 +29,7 @@ export function Roadmap() {
           {ROADMAP_ITEMS.map((item) => (
             <article
               key={item.date}
-              className={[styles.item, item.reached ? styles.reached : '']
-                .filter(Boolean)
-                .join(' ')}
+              className={cx(styles.item, item.reached && styles.reached)}
             >
               <span className={styles.dot} aria-hidden="true">
                 <span className={styles.halo} />

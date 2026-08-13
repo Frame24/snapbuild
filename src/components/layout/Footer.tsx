@@ -1,33 +1,10 @@
+import {
+  FOOTER_CONTACTS,
+  FOOTER_DOCS,
+  FOOTER_NAV,
+} from '../../content/nav'
 import { assetUrl } from '../../lib/assets'
 import styles from './Footer.module.css'
-
-const NAV_LINKS = [
-  { href: '#process', label: 'Продукт' },
-  { href: '#use-cases', label: 'Возможности' },
-  { href: '#compare', label: 'Преимущества' },
-  { href: '#pricing', label: 'Тарифы' },
-  { href: '#features', label: 'Безопасность' },
-  { href: '#roadmap', label: 'Роадмап' },
-  { href: '#faq', label: 'Частые вопросы' },
-] as const
-
-const DOC_LINKS = [
-  {
-    href: 'https://snapbuild.ru/privacy',
-    label: 'Политика конфиденциальности',
-    external: true,
-  },
-  { href: '#faq', label: 'FAQ', external: false },
-] as const
-
-const CONTACT_LINKS = [
-  { href: '#demo', label: 'Запросить демо', external: false },
-  {
-    href: 'https://t.me/snapbuild',
-    label: 'Telegram',
-    external: true,
-  },
-] as const
 
 export function Footer() {
   return (
@@ -52,7 +29,7 @@ export function Footer() {
           <div className={styles.col}>
             <p className={styles.colTitle}>Навигация</p>
             <div className={styles.list}>
-              {NAV_LINKS.map((link) => (
+              {FOOTER_NAV.map((link) => (
                 <a key={link.href} className={styles.link} href={link.href}>
                   {link.label}
                 </a>
@@ -63,7 +40,7 @@ export function Footer() {
           <div className={styles.col}>
             <p className={styles.colTitle}>Документация</p>
             <div className={styles.list}>
-              {DOC_LINKS.map((link) => (
+              {FOOTER_DOCS.map((link) => (
                 <a
                   key={link.label}
                   className={styles.link}
@@ -81,7 +58,7 @@ export function Footer() {
           <div className={styles.col}>
             <p className={styles.colTitle}>Контакты</p>
             <div className={styles.list}>
-              {CONTACT_LINKS.map((link) => (
+              {FOOTER_CONTACTS.map((link) => (
                 <a
                   key={link.label}
                   className={styles.link}

@@ -1,4 +1,5 @@
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'react'
+import { cx } from '../../lib/cx'
 import styles from './Button.module.css'
 
 type ButtonVariant = 'primary' | 'secondary'
@@ -28,14 +29,12 @@ function buttonClassName(
   size: ButtonSize,
   className?: string,
 ) {
-  return [
+  return cx(
     styles.button,
     styles[variant],
     size === 'lg' ? styles.lg : styles.md,
-    className ?? '',
-  ]
-    .filter(Boolean)
-    .join(' ')
+    className,
+  )
 }
 
 export function Button(props: ButtonProps) {

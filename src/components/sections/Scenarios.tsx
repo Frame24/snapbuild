@@ -1,5 +1,9 @@
 import { useEffect, useId, useRef, useState } from 'react'
+import pills from '../ui/Pills.module.css'
 import { assetUrl } from '../../lib/assets'
+import { cx } from '../../lib/cx'
+import { centerInScroller } from '../../lib/media'
+import { handleTabListKeyDown } from '../../lib/tabList'
 import { useReveal } from '../../hooks/useReveal'
 import { SCENARIOS } from '../../content/scenarios'
 import styles from './Scenarios.module.css'
@@ -10,21 +14,13 @@ export function Scenarios() {
   const baseId = useId()
   const [index, setIndex] = useState(0)
   const scenario = SCENARIOS[index]
-  const last = SCENARIOS.length - 1
 
   useEffect(() => {
     const tabs = tabsRef.current
-    if (!tabs || !window.matchMedia('(max-width: 1023px)').matches) return
+    if (!tabs) return
     const active = tabs.querySelector<HTMLElement>('[aria-selected="true"]')
     if (!active) return
-    const reduceMotion = window.matchMedia(
-      '(prefers-reduced-motion: reduce)',
-    ).matches
-    active.scrollIntoView({
-      inline: 'center',
-      block: 'nearest',
-      behavior: reduceMotion ? 'auto' : 'smooth',
-    })
+    centerInScroller(active)
   }, [index])
 
   return (
@@ -46,23 +42,11 @@ export function Scenarios() {
 
       <div
         ref={tabsRef}
-        className={styles.tabs}
+        className={pills.list}
         role="tablist"
         aria-label="Команды"
         onKeyDown={(event) => {
-          if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
-            event.preventDefault()
-            setIndex(index === last ? 0 : index + 1)
-          } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
-            event.preventDefault()
-            setIndex(index === 0 ? last : index - 1)
-          } else if (event.key === 'Home') {
-            event.preventDefault()
-            setIndex(0)
-          } else if (event.key === 'End') {
-            event.preventDefault()
-            setIndex(last)
-          }
+          handleTabListKeyDown(event, index, SCENARIOS.length, setIndex)
         }}
       >
         {SCENARIOS.map((item, itemIndex) => {
@@ -73,9 +57,7 @@ export function Scenarios() {
               type="button"
               role="tab"
               id={`${baseId}-tab-${item.id}`}
-              className={[styles.tab, selected ? styles.tabActive : '']
-                .filter(Boolean)
-                .join(' ')}
+              className={cx(pills.item, selected && pills.itemActive)}
               aria-selected={selected}
               aria-controls={`${baseId}-panel`}
               tabIndex={selected ? 0 : -1}

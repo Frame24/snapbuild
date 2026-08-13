@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { assetUrl } from '../../lib/assets'
+import { CheckIcon } from '../ui/CheckIcon'
+import { cx } from '../../lib/cx'
 import { useReveal } from '../../hooks/useReveal'
 import {
   PRICING_PLANS,
@@ -34,12 +35,7 @@ export function Pricing() {
         <div className={styles.toggle} role="group" aria-label="Период оплаты">
           <button
             type="button"
-            className={[
-              styles.toggleBtn,
-              period === 'month' ? styles.toggleActive : '',
-            ]
-              .filter(Boolean)
-              .join(' ')}
+            className={cx(styles.toggleBtn, period === 'month' && styles.toggleActive)}
             aria-pressed={period === 'month'}
             onClick={() => setPeriod('month')}
           >
@@ -47,12 +43,7 @@ export function Pricing() {
           </button>
           <button
             type="button"
-            className={[
-              styles.toggleBtn,
-              period === 'year' ? styles.toggleActive : '',
-            ]
-              .filter(Boolean)
-              .join(' ')}
+            className={cx(styles.toggleBtn, period === 'year' && styles.toggleActive)}
             aria-pressed={period === 'year'}
             onClick={() => setPeriod('year')}
           >
@@ -72,12 +63,7 @@ export function Pricing() {
           return (
             <article
               key={plan.id}
-              className={[
-                styles.card,
-                plan.featured ? styles.featured : '',
-              ]
-                .filter(Boolean)
-                .join(' ')}
+              className={cx(styles.card, plan.featured && styles.featured)}
             >
               {plan.featured ? (
                 <span className={styles.badge}>{plan.badge}</span>
@@ -110,12 +96,7 @@ export function Pricing() {
                 {plan.features.map((feature) => (
                   <li key={feature} className={styles.feature}>
                     <span className={styles.check} aria-hidden="true">
-                      <img
-                        src={assetUrl('images/a4ce0581ce7807b6.svg')}
-                        alt=""
-                        width={16}
-                        height={16}
-                      />
+                      <CheckIcon size={16} />
                     </span>
                     {feature}
                   </li>

@@ -1,5 +1,9 @@
 import { useCallback, useEffect, useId, useRef, useState } from 'react'
+import pills from '../ui/Pills.module.css'
 import { assetUrl } from '../../lib/assets'
+import { cx } from '../../lib/cx'
+import { isTabletDown, prefersReducedMotion } from '../../lib/media'
+import { handleTabListKeyDown } from '../../lib/tabList'
 import { useReveal } from '../../hooks/useReveal'
 import {
   USE_CASE_DURATION_MS,
@@ -36,10 +40,10 @@ export function UseCases() {
     if (tabList.contains(document.activeElement)) {
       activeTab.focus()
     }
-    if (!window.matchMedia('(max-width: 1023px)').matches) {
+    if (!isTabletDown()) {
       return
     }
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const reduceMotion = prefersReducedMotion()
     const targetLeft =
       activeTab.offsetLeft - (tabList.clientWidth - activeTab.offsetWidth) / 2
     tabList.scrollTo({
@@ -51,7 +55,7 @@ export function UseCases() {
   useEffect(() => {
     const section = sectionRef.current
     if (!section) return
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    if (prefersReducedMotion()) return
 
     let rafId = 0
     let startTime: number | null = null
@@ -185,25 +189,14 @@ export function UseCases() {
           </h2>
           <div
             ref={tabListRef}
-            className={styles.tabs}
+            className={pills.list}
             role="tablist"
             id={tablistId}
             aria-label="Форматы контента"
             onKeyDown={(event) => {
-              const last = USE_CASE_TABS.length - 1
-              if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
-                event.preventDefault()
-                goTo(tabIndex === last ? 0 : tabIndex + 1, 0)
-              } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
-                event.preventDefault()
-                goTo(tabIndex === 0 ? last : tabIndex - 1, 0)
-              } else if (event.key === 'Home') {
-                event.preventDefault()
-                goTo(0, 0)
-              } else if (event.key === 'End') {
-                event.preventDefault()
-                goTo(last, 0)
-              }
+              handleTabListKeyDown(event, tabIndex, USE_CASE_TABS.length, (next) =>
+                goTo(next, 0),
+              )
             }}
           >
             {USE_CASE_TABS.map((tab, index) => {
@@ -214,9 +207,7 @@ export function UseCases() {
                   type="button"
                   role="tab"
                   id={`${baseId}-tab-${tab.id}`}
-                  className={[styles.tab, selected ? styles.tabActive : '']
-                    .filter(Boolean)
-                    .join(' ')}
+                  className={cx(pills.item, selected && pills.itemActive)}
                   aria-selected={selected}
                   aria-controls={`${baseId}-panel`}
                   tabIndex={selected ? 0 : -1}
@@ -234,21 +225,17 @@ export function UseCases() {
             {USE_CASE_TABS.map((tab, tIndex) => (
               <div
                 key={tab.id}
-                className={[
+                className={cx(
                   styles.pointSet,
-                  tIndex !== tabIndex ? styles.pointSetHidden : '',
-                ]
-                  .filter(Boolean)
-                  .join(' ')}
+                  tIndex !== tabIndex && styles.pointSetHidden,
+                )}
               >
                 {tab.items.map((item, pIndex) => {
                   const active = tIndex === tabIndex && pIndex === pointIndex
                   return (
                     <article
                       key={item.title}
-                      className={[styles.card, active ? styles.cardActive : '']
-                        .filter(Boolean)
-                        .join(' ')}
+                      className={cx(styles.card, active && styles.cardActive)}
                       role="button"
                       tabIndex={tIndex === tabIndex ? 0 : -1}
                       aria-pressed={active}
@@ -293,9 +280,7 @@ export function UseCases() {
                 return (
                   <img
                     key={key}
-                    className={[styles.media, active ? styles.mediaActive : '']
-                      .filter(Boolean)
-                      .join(' ')}
+                    className={cx(styles.media, active && styles.mediaActive)}
                     src={assetUrl(item.image)}
                     alt={active ? item.alt : ''}
                     width={2880}

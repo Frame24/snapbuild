@@ -1,5 +1,6 @@
 import { useId, useState } from 'react'
 import { assetUrl } from '../../lib/assets'
+import { cx } from '../../lib/cx'
 import { useReveal } from '../../hooks/useReveal'
 import { FAQ_COLUMNS } from '../../content/faq'
 import styles from './Faq.module.css'
@@ -60,9 +61,7 @@ export function Faq() {
                   </button>
                   <div
                     id={panelId}
-                    className={[styles.panel, expanded ? styles.panelOpen : '']
-                      .filter(Boolean)
-                      .join(' ')}
+                    className={cx(styles.panel, expanded && styles.panelOpen)}
                     role="region"
                     aria-labelledby={buttonId}
                     aria-hidden={!expanded}

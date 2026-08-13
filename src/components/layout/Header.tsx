@@ -1,14 +1,8 @@
 import { useEffect, useId, useRef, useState } from 'react'
+import { HEADER_NAV } from '../../content/nav'
 import { assetUrl } from '../../lib/assets'
+import { cx } from '../../lib/cx'
 import styles from './Header.module.css'
-
-const NAV_LINKS = [
-  { href: '#process', label: 'Продукт' },
-  { href: '#use-cases', label: 'Возможности' },
-  { href: '#pricing', label: 'Тарифы' },
-  { href: '#features', label: 'Безопасность' },
-  { href: '#faq', label: 'FAQ' },
-] as const
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false)
@@ -90,7 +84,7 @@ export function Header() {
   return (
     <header
       id="header"
-      className={[styles.header, scrolled ? styles.scrolled : ''].filter(Boolean).join(' ')}
+      className={cx(styles.header, scrolled && styles.scrolled)}
     >
       {menuOpen ? (
         <button
@@ -113,7 +107,7 @@ export function Header() {
         </a>
 
         <nav className={styles.nav} aria-label="Основная навигация">
-          {NAV_LINKS.map((link) => (
+          {HEADER_NAV.map((link) => (
             <a key={link.href} className={styles.navLink} href={link.href}>
               {link.label}
             </a>
@@ -127,9 +121,7 @@ export function Header() {
           <button
             ref={burgerRef}
             type="button"
-            className={[styles.burger, menuOpen ? styles.burgerOpen : '']
-              .filter(Boolean)
-              .join(' ')}
+            className={cx(styles.burger, menuOpen && styles.burgerOpen)}
             aria-controls={menuId}
             aria-expanded={menuOpen}
             aria-label={menuOpen ? 'Закрыть меню' : 'Открыть меню'}
@@ -143,13 +135,11 @@ export function Header() {
       <nav
         ref={menuRef}
         id={menuId}
-        className={[styles.menu, menuOpen ? styles.menuOpen : '']
-          .filter(Boolean)
-          .join(' ')}
+        className={cx(styles.menu, menuOpen && styles.menuOpen)}
         aria-label="Мобильная навигация"
         aria-hidden={!menuOpen}
       >
-        {NAV_LINKS.map((link) => (
+        {HEADER_NAV.map((link) => (
           <a
             key={`mobile-${link.href}`}
             className={styles.menuLink}

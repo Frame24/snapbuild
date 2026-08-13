@@ -1,7 +1,7 @@
 import { useEffect, useId, useRef, useState, type FormEvent, type ReactNode } from 'react'
-import { assetUrl } from '../../lib/assets'
-import { useReveal } from '../../hooks/useReveal'
+import { CheckIcon } from '../ui/CheckIcon'
 import { Button } from '../ui/Button'
+import { useReveal } from '../../hooks/useReveal'
 import {
   DEMO_POINTS,
   DEMO_ROLES,
@@ -88,12 +88,7 @@ export function DemoForm() {
             {DEMO_POINTS.map((point) => (
               <li key={point} className={styles.point}>
                 <span className={styles.check} aria-hidden="true">
-                  <img
-                    src={assetUrl('images/a4ce0581ce7807b6.svg')}
-                    alt=""
-                    width={16}
-                    height={16}
-                  />
+                  <CheckIcon size={16} />
                 </span>
                 {point}
               </li>
@@ -105,12 +100,7 @@ export function DemoForm() {
           {sentTo ? (
             <div className={styles.success} role="status" aria-live="polite">
               <span className={styles.successMark} aria-hidden="true">
-                <img
-                  src={assetUrl('images/a4ce0581ce7807b6.svg')}
-                  alt=""
-                  width={28}
-                  height={28}
-                />
+                <CheckIcon size={22} />
               </span>
               <h3 className={styles.successTitle}>Заявка отправлена</h3>
               <p className={styles.successText}>

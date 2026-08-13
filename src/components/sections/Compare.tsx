@@ -1,4 +1,5 @@
-import { assetUrl } from '../../lib/assets'
+import { CheckIcon } from '../ui/CheckIcon'
+import { cx } from '../../lib/cx'
 import { useReveal } from '../../hooks/useReveal'
 import { COMPARE_HEAD, COMPARE_ROWS, type CompareCell } from '../../content/compare'
 import styles from './Compare.module.css'
@@ -8,12 +9,7 @@ function CellContent({ cell }: { cell: CompareCell }) {
     return (
       <>
         <span className={styles.check} aria-hidden="true">
-          <img
-            src={assetUrl('images/a4ce0581ce7807b6.svg')}
-            alt=""
-            width={24}
-            height={24}
-          />
+          <CheckIcon size={24} />
         </span>
         {cell.label ? <span>{cell.label}</span> : null}
       </>
@@ -64,13 +60,11 @@ export function Compare() {
             {COMPARE_HEAD.map((label, index) => (
               <div
                 key={label}
-                className={[
+                className={cx(
                   styles.cell,
-                  index === 0 ? styles.cellLabel : '',
-                  index === 3 ? styles.cellNarrow : '',
-                ]
-                  .filter(Boolean)
-                  .join(' ')}
+                  index === 0 && styles.cellLabel,
+                  index === 3 && styles.cellNarrow,
+                )}
                 role="columnheader"
               >
                 {index === 1 ? (
@@ -90,12 +84,7 @@ export function Compare() {
               {row.cells.map((cell, index) => (
                 <div
                   key={`${row.label}-${index}`}
-                  className={[
-                    styles.cell,
-                    index === 2 ? styles.cellNarrow : '',
-                  ]
-                    .filter(Boolean)
-                    .join(' ')}
+                  className={cx(styles.cell, index === 2 && styles.cellNarrow)}
                   role="cell"
                 >
                   <CellContent cell={cell} />
