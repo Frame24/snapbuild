@@ -1,0 +1,134 @@
+import { useState } from 'react'
+import { assetUrl } from '../../lib/assets'
+import { useReveal } from '../../hooks/useReveal'
+import {
+  PRICING_PLANS,
+  formatPrice,
+  planMonthlyPrice,
+  type PricingPeriod,
+} from '../../content/pricing'
+import styles from './Pricing.module.css'
+
+export function Pricing() {
+  const sectionRef = useReveal<HTMLElement>()
+  const [period, setPeriod] = useState<PricingPeriod>('year')
+
+  return (
+    <section
+      ref={sectionRef}
+      className={`${styles.section} reveal`}
+      id="pricing"
+      aria-labelledby="pricing-title"
+    >
+      <header className={styles.header}>
+        <div className={styles.heading}>
+          <h2 className={styles.title} id="pricing-title">
+            Тарифы под масштаб команды
+          </h2>
+          <p className={styles.subtitle}>
+            От отдела маркетинга до контура безопасности. Счёт и внедрение
+            обсуждаем на демо.
+          </p>
+        </div>
+
+        <div className={styles.toggle} role="group" aria-label="Период оплаты">
+          <button
+            type="button"
+            className={[
+              styles.toggleBtn,
+              period === 'month' ? styles.toggleActive : '',
+            ]
+              .filter(Boolean)
+              .join(' ')}
+            aria-pressed={period === 'month'}
+            onClick={() => setPeriod('month')}
+          >
+            Ежемесячно
+          </button>
+          <button
+            type="button"
+            className={[
+              styles.toggleBtn,
+              period === 'year' ? styles.toggleActive : '',
+            ]
+              .filter(Boolean)
+              .join(' ')}
+            aria-pressed={period === 'year'}
+            onClick={() => setPeriod('year')}
+          >
+            Ежегодно
+            <span className={styles.save}>2 месяца в подарок</span>
+          </button>
+        </div>
+      </header>
+
+      <div className={styles.grid}>
+        {PRICING_PLANS.map((plan) => {
+          const price =
+            plan.monthly === null
+              ? null
+              : planMonthlyPrice(plan.monthly, period)
+
+          return (
+            <article
+              key={plan.id}
+              className={[
+                styles.card,
+                plan.featured ? styles.featured : '',
+              ]
+                .filter(Boolean)
+                .join(' ')}
+            >
+              {plan.featured ? (
+                <span className={styles.badge}>{plan.badge}</span>
+              ) : null}
+
+              <div className={styles.cardHead}>
+                <h3 className={styles.name}>{plan.name}</h3>
+                <p className={styles.desc}>{plan.desc}</p>
+              </div>
+
+              <p className={styles.price}>
+                {price === null ? (
+                  <span className={styles.amount}>По запросу</span>
+                ) : (
+                  <>
+                    <span className={styles.amount}>{formatPrice(price)}</span>
+                    <span className={styles.per}> / мес</span>
+                  </>
+                )}
+              </p>
+              {price !== null && period === 'year' ? (
+                <p className={styles.note}>при оплате за год</p>
+              ) : (
+                <p className={styles.note} aria-hidden="true">
+                  &nbsp;
+                </p>
+              )}
+
+              <ul className={styles.features}>
+                {plan.features.map((feature) => (
+                  <li key={feature} className={styles.feature}>
+                    <span className={styles.check} aria-hidden="true">
+                      <img
+                        src={assetUrl('images/a4ce0581ce7807b6.svg')}
+                        alt=""
+                        width={16}
+                        height={16}
+                      />
+                    </span>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+
+              <a className={styles.cta} href="#demo">
+                {plan.cta}
+              </a>
+            </article>
+          )
+        })}
+      </div>
+    </section>
+  )
+}

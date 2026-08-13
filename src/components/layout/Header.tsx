@@ -5,6 +5,7 @@ import styles from './Header.module.css'
 const NAV_LINKS = [
   { href: '#process', label: 'Продукт' },
   { href: '#use-cases', label: 'Возможности' },
+  { href: '#pricing', label: 'Тарифы' },
   { href: '#features', label: 'Безопасность' },
   { href: '#faq', label: 'FAQ' },
 ] as const

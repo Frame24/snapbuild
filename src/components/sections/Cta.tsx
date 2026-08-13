@@ -11,7 +11,6 @@ export function Cta() {
       id="cta"
       aria-labelledby="cta-title"
     >
-      <span id="demo" className={styles.anchor} />
       <div className={styles.shine} aria-hidden="true" />
       <div className={styles.content}>
         <div className={styles.intro}>

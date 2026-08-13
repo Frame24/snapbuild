@@ -57,16 +57,6 @@
   animation: cta-blob-b 8s ease-in-out infinite;
 }
 
-.anchor {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  scroll-margin-top: calc(88 / var(--fluid-base-desktop) * 1vw);
-}
-
 .shine {
   position: absolute;
   z-index: 0;

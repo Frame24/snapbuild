@@ -5,6 +5,7 @@ const NAV_LINKS = [
   { href: '#process', label: 'Продукт' },
   { href: '#use-cases', label: 'Возможности' },
   { href: '#compare', label: 'Преимущества' },
+  { href: '#pricing', label: 'Тарифы' },
   { href: '#features', label: 'Безопасность' },
   { href: '#roadmap', label: 'Роадмап' },
   { href: '#faq', label: 'Частые вопросы' },
