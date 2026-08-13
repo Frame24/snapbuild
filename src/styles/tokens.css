@@ -1,0 +1,130 @@
+:root {
+  /* Фон страницы и карточек */
+  --color-bg: #f2f2f4;
+  --color-bg-painted: #f5f5f6;
+  --color-surface: #ffffff;
+  --color-surface-soft: #fafafa;
+  --color-surface-muted: #f5f5f7;
+
+  /* Цвета текста */
+  --color-text: #000000;
+  --color-text-secondary: #5a5b62;
+  --color-text-tertiary: rgba(0, 0, 0, 0.6);
+  --color-text-contrast: #ffffff;
+
+  /* Акцентный синий (primary) */
+  --color-primary-50: #eff3ff;
+  --color-primary-100: #dae2ff;
+  --color-primary-200: #becdff;
+  --color-primary-300: #91aeff;
+  --color-primary-400: #5e84fc;
+  --color-primary-500: #3758f9;
+  --color-primary-600: #2237ee;
+  --color-primary-700: #1a25db;
+  --color-primary-800: #1c20b1;
+  --color-primary-900: #1c228c;
+  --color-primary-950: #161755;
+  --color-primary: var(--color-primary-500);
+
+  /* Серые, бордеры, тёмные заливки */
+  --color-neutral-100: #ffffff;
+  --color-neutral-200: #f2f2f4;
+  --color-neutral-300: #e5e5e7;
+  --color-stroke: rgba(0, 0, 0, 0.05);
+  --color-stroke-strong: rgba(0, 0, 0, 0.1);
+  --color-fill-dark: #141414;
+  --color-fill-darker: #0a0a0a;
+
+  /* Градиенты с оригинала */
+  --gradient-brand: linear-gradient(90deg, #ff6d3c, #ff6ba7 46%, #bb6dff);
+  --gradient-brand-soft: linear-gradient(
+    157deg,
+    #fff 17.71%,
+    #ffcdb3 43.16%,
+    #ffa4b6 58.2%,
+    #ffb2e9 73.32%,
+    #d4d6ff 90.8%,
+    #fff 103.16%
+  );
+
+  /* Satoshi вместо TT Commons Pro с прода */
+  --font-sans: 'Satoshi', system-ui, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Радиусы */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-card: 24px;
+  --radius-button: 12px;
+  --radius-button-lg: 24px;
+  --radius-header: 16px;
+  --radius-full: 9999px;
+
+  /* Опорные ширины для fluid: calc(N / base * 1vw) */
+  --fluid-base-desktop: 14.4;
+  --fluid-base-tablet: 8.1;
+  --fluid-base-mobile: 3.75;
+
+  /* Контейнер и отступы секций */
+  --container-max: 1440px;
+  --section-pad-y: calc(96 / var(--fluid-base-desktop) * 1vw);
+  --section-pad-x: calc(40 / var(--fluid-base-desktop) * 1vw);
+  --section-gap: calc(40 / var(--fluid-base-desktop) * 1vw);
+  --card-pad: calc(32 / var(--fluid-base-desktop) * 1vw);
+  --card-gap: calc(32 / var(--fluid-base-desktop) * 1vw);
+
+  /* Размеры текста */
+  --text-section-title: calc(52 / var(--fluid-base-desktop) * 1vw);
+  --text-section-title-weight: var(--font-weight-medium);
+  --text-section-title-tracking: calc(-1 / var(--fluid-base-desktop) * 1vw);
+  --text-body: calc(16 / var(--fluid-base-desktop) * 1vw);
+  --text-card-title: calc(24 / var(--fluid-base-desktop) * 1vw);
+
+  /* Переходы */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 180ms;
+  --duration-base: 300ms;
+
+  /* Кнопки */
+  --btn-primary-bg: #ffffff;
+  --btn-primary-fg: #000000;
+  --btn-primary-bg-hover: #f5f5f7;
+  --btn-secondary-bg: #141414;
+  --btn-secondary-fg: #ffffff;
+  --btn-secondary-bg-hover: #0a0a0a;
+}
+
+@media (max-width: 1023px) {
+  :root {
+    --section-pad-y: calc(60 / var(--fluid-base-tablet) * 1vw);
+    --section-pad-x: calc(20 / var(--fluid-base-tablet) * 1vw);
+    --section-gap: calc(40 / var(--fluid-base-tablet) * 1vw);
+    --card-pad: calc(24 / var(--fluid-base-tablet) * 1vw);
+    --card-gap: calc(24 / var(--fluid-base-tablet) * 1vw);
+    --text-section-title: calc(52 / var(--fluid-base-tablet) * 1vw);
+    --text-section-title-tracking: calc(-1 / var(--fluid-base-tablet) * 1vw);
+    --text-body: calc(16 / var(--fluid-base-tablet) * 1vw);
+    --text-card-title: calc(24 / var(--fluid-base-tablet) * 1vw);
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --section-pad-y: calc(48 / var(--fluid-base-mobile) * 1vw);
+    --section-pad-x: calc(16 / var(--fluid-base-mobile) * 1vw);
+    --section-gap: calc(32 / var(--fluid-base-mobile) * 1vw);
+    --card-pad: calc(16 / var(--fluid-base-mobile) * 1vw);
+    --card-gap: calc(16 / var(--fluid-base-mobile) * 1vw);
+    --text-section-title: calc(32 / var(--fluid-base-mobile) * 1vw);
+    --text-section-title-weight: 550;
+    --text-section-title-tracking: calc(-0.5 / var(--fluid-base-mobile) * 1vw);
+    --text-body: calc(14 / var(--fluid-base-mobile) * 1vw);
+    --text-card-title: calc(20 / var(--fluid-base-mobile) * 1vw);
+  }
+}
