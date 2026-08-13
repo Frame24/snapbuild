@@ -1,11 +1,9 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// Путь для GitHub Pages: https://<user>.github.io/<repo>/
-// Если репозиторий называется иначе: BASE_PATH=/имя-репо/ npm run build
-const base = process.env.BASE_PATH ?? '/snapbuild/'
-
-export default defineConfig({
-  base,
+// Сборка уходит на GitHub Pages: https://<user>.github.io/snapbuild/
+// Другой префикс: BASE_PATH=/имя-репо/ npm run build
+export default defineConfig(({ command }) => ({
+  base: process.env.BASE_PATH ?? (command === 'build' ? '/snapbuild/' : '/'),
   plugins: [react()],
-})
+}))

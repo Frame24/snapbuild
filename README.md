@@ -1,32 +1,115 @@
-# React + TypeScript + Vite
+# Снэпбилд
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Продолжение продуктового лендинга [snapbuild.ru](https://snapbuild.ru/): воспроизведены текущие блоки и добавлены пять новых секций в том же визуальном языке.
 
-Currently, two official plugins are available:
+## Опубликованная страница
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+https://Frame24.github.io/snapbuild/
 
-## React Compiler
+Репозиторий: https://github.com/Frame24/snapbuild
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Публикация: GitHub Pages, ветка `gh-pages`. После правок в `master`:
 
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm run deploy
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Локальный запуск
+
+Нужны Node.js 22+ и npm.
+
+```bash
+npm install
+npm run dev
+```
+
+Откроется http://localhost:5173/.
+
+Другие команды:
+
+```bash
+npm run build    # продакшен-сборка в dist/
+npm run preview  # локальный просмотр сборки
+npm run lint     # oxlint
+```
+
+Ключи и платные сервисы не нужны. Шрифт Satoshi подключается с Fontshare.
+
+## Стек
+
+- Vite 8
+- React 19
+- TypeScript
+- CSS Modules и CSS-переменные (без стороннего UI-kit)
+- GitHub Pages (`gh-pages`)
+
+## Пять добавленных секций
+
+1. **Сценарии для команд** (`#scenarios`) — вкладки ролей: маркетинг, дизайн, продажи, продукт.
+2. **Тарифы** (`#pricing`) — три плана и переключатель месяца / года.
+3. **Интеграции** (`#integrations`) — карточки с фильтром по категориям.
+4. **Отзывы** (`#testimonials`) — карусель цитат.
+5. **Заявка на демо** (`#demo`) — форма с валидацией и состоянием успешной отправки, без сервера.
+
+Новые блоки встроены в поток исходной страницы, а не собраны отдельно:
+
+Hero → логотипы → процесс → форматы → **сценарии** → сравнение → **тарифы** → безопасность → **интеграции** → роадмап → **отзывы** → FAQ → **форма** → CTA → подвал.
+
+## Как анализировалась стилистика
+
+Исходник — живая страница https://snapbuild.ru/, HTML, CSS и поведение скриптов.
+
+Снято и перенесено в токены (`src/styles/tokens.css`):
+
+- фон `#f2f2f4`, текст `#000` / `#5a5b62`, акцент `#3758f9`;
+- карточки на белом, радиус около 24px;
+- fluid-сетка `calc(N / 14.4 * 1vw)` на десктопе, `/ 8.1` на планшете, `/ 3.75` на мобильном;
+- типографика заголовков секций, межбуквенные интервалы, веса;
+- паттерны: sticky-шапка, marquee логотипов, табы форматов, аккордеон FAQ, появление секций при скролле.
+
+Картинки и логотипы скачаны с сайта (с разрешения) и лежат в `public/images/`, без hotlink. Список файлов: `public/images/SOURCES.txt`.
+
+Шрифт на проде — TT Commons Pro. В проекте — Satoshi (Fontshare), как согласованная близкая замена.
+
+## Что удалось воспроизвести
+
+- шапка: логотип, якорная навигация, CTA, sticky, мобильное меню;
+- первый экран с заголовком, подзаголовком, кнопкой и скриншотом;
+- бегущая строка логотипов;
+- блок «одна платформа» с тремя карточками;
+- табы форматов (сайты, изображения, видео, баннеры, презентации) с автопрокруткой;
+- таблица сравнения;
+- безопасность;
+- дорожная карта;
+- FAQ-аккордеон;
+- финальный CTA;
+- подвал.
+
+Адаптив проверялся на ширинах около 1280, 768 и 375 px.
+
+## Что не удалось реализовать и почему
+
+- **TT Commons Pro** — коммерческий шрифт, в публичный репозиторий его нельзя класть. Используется Satoshi.
+- **Попиксельное совпадение** с CMS-разметкой оригинала (`data-cms-key`, фиксированные высоты контейнеров). Композиция и ритм сохранены, точные inline-размеры редактора не копировались.
+- **Полный паритет motion** с `hero-motion.js` и внутренними скриптами платформы. Есть появление секций, sticky, marquee, hover и автопрокрутка табов, без покадрового клона всех эффектов.
+- **Cookie-баннер и сторонние виджеты** оригинала не переносились: они не часть продуктового лендинга.
+- **Серверная отправка формы** не подключена. Заявка проверяется на клиенте и показывает состояние успеха.
+
+## Возможные доработки
+
+- ближе подогнать таблицу сравнения и роадмап к оригиналу на всех ширинах;
+- видеопревью в табах форматов вместо статичного кадра;
+- вынести тексты новых секций в отдельный контентный слой;
+- серверная отправка заявки и антиспам;
+- проверки на регрессию вёрстки для ключевых интерактивных сценариев.
+
+## AI-инструменты
+
+Работа шла в Cursor. Агенты помогали:
+
+- разобрать HTML/CSS исходного сайта и собрать токены;
+- набросать структуру компонентов и секций;
+- написать копирайт новых блоков в тоне продукта;
+- править адаптив, состояния и анимации.
+
+Сгенерированный код проверялся вручную: сборка, поведение в браузере, сверка с оригиналом, правки отступов и состояний. Итоговый результат — ответственность автора репозитория.
