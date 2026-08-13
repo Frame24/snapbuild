@@ -9,6 +9,8 @@
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
 }
 
 html,
@@ -24,7 +26,7 @@ body {
   font-size: var(--text-body);
   line-height: 1.5;
   color: var(--color-text);
-  background: var(--color-bg);
+  background: var(--color-bg-painted);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

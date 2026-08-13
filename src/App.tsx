@@ -1,32 +1,18 @@
-import { Button } from './components/ui/Button'
-import { Container } from './components/ui/Container'
+import { Header } from './components/layout/Header'
+import { Footer } from './components/layout/Footer'
+import { Hero } from './components/sections/Hero'
 import styles from './App.module.css'
 
 function App() {
   return (
     <div className={styles.app}>
-      <main className={styles.shell}>
-        <Container>
-          <div className={styles.panel}>
-            <p className={styles.eyebrow}>Снэпбилд</p>
-            <h1 className={styles.title}>
-              Платформа, где всё создаётся в рамках вашего бренда
-            </h1>
-            <p className={styles.subtitle}>
-              Подключите дизайн-систему, чтобы команда собирала сайты,
-              изображения и презентации в фирменном стиле за минуты.
-            </p>
-            <div className={styles.actions}>
-              <Button href="#demo" variant="secondary">
-                Запросить демо
-              </Button>
-              <Button href="#product" variant="primary">
-                Смотреть продукт
-              </Button>
-            </div>
-          </div>
-        </Container>
+      <Header />
+      <main className={styles.main}>
+        <Hero />
+        {/* Место для следующих секций лендинга */}
+        <div className={styles.spacer} aria-hidden="true" />
       </main>
+      <Footer />
     </div>
   )
 }
