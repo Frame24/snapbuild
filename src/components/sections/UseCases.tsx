@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useId, useRef, useState } from 'react'
 import pills from '../ui/Pills.module.css'
+import section from '../ui/Section.module.css'
 import { assetUrl } from '../../lib/assets'
 import { cx } from '../../lib/cx'
 import { isTabletDown, prefersReducedMotion } from '../../lib/media'
@@ -173,13 +174,13 @@ export function UseCases() {
   return (
     <section
       ref={sectionRef}
-      className={`${styles.section} reveal`}
+      className={cx(section.shell, styles.section, 'reveal')}
       id="use-cases"
       aria-labelledby="use-cases-title"
     >
       <div className={styles.inner}>
         <div className={styles.header}>
-          <h2 className={styles.title} id="use-cases-title">
+          <h2 className={cx(section.title, styles.title)} id="use-cases-title">
             <span className={styles.wide}>
               Любой контент в фирменном стиле за считанные минуты
             </span>

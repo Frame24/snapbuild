@@ -1,6 +1,7 @@
 import { useId, useState } from 'react'
 import { assetUrl } from '../../lib/assets'
 import { cx } from '../../lib/cx'
+import section from '../ui/Section.module.css'
 import { useReveal } from '../../hooks/useReveal'
 import { FAQ_COLUMNS } from '../../content/faq'
 import styles from './Faq.module.css'
@@ -17,15 +18,15 @@ export function Faq() {
   return (
     <section
       ref={sectionRef}
-      className={`${styles.faq} reveal`}
+      className={cx(section.shell, styles.faq, 'reveal')}
       id="faq"
       aria-labelledby="faq-title"
     >
       <div className={styles.header}>
-        <h2 className={styles.title} id="faq-title">
+        <h2 className={section.title} id="faq-title">
           Часто задаваемые вопросы
         </h2>
-        <p className={styles.subtitle}>
+        <p className={cx(section.subtitle, styles.subtitle)}>
           Ответы, которые помогут вам принять решение уверенно - без рисков для
           бренда и безопасности
         </p>

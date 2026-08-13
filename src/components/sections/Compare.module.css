@@ -1,13 +1,6 @@
 .compare {
   --compare-cols: 6;
-  display: flex;
-  flex-direction: column;
   gap: calc(40 / var(--fluid-base-desktop) * 1vw);
-  padding: calc(32 / var(--fluid-base-desktop) * 1vw)
-    calc(40 / var(--fluid-base-desktop) * 1vw)
-    calc(96 / var(--fluid-base-desktop) * 1vw);
-  background: var(--color-bg-painted);
-  color: var(--color-text);
 }
 
 .header {
@@ -22,23 +15,13 @@
 .title {
   flex: 1 1 auto;
   min-width: 0;
-  margin: 0;
-  font-weight: 500;
-  color: var(--color-text);
-  font-size: calc(52 / var(--fluid-base-desktop) * 1vw);
-  line-height: calc(64 / 52);
-  letter-spacing: calc(-1.25 / var(--fluid-base-desktop) * 1vw);
 }
 
 .subtitle {
-  margin: 0;
   width: calc(782 / var(--fluid-base-desktop) * 1vw);
   max-width: 46%;
   flex: 0 1 auto;
-  color: rgba(0, 0, 0, 0.6);
-  font-weight: 500;
-  font-size: calc(16 / var(--fluid-base-desktop) * 1vw);
-  line-height: calc(24 / 16);
+  color: var(--color-text-tertiary);
 }
 
 .scroll {
@@ -162,9 +145,6 @@
 @media (max-width: 1023px) {
   .compare {
     gap: calc(40 / var(--fluid-base-tablet) * 1vw);
-    padding: calc(32 / var(--fluid-base-tablet) * 1vw)
-      calc(20 / var(--fluid-base-tablet) * 1vw)
-      calc(60 / var(--fluid-base-tablet) * 1vw);
   }
 
   .header {
@@ -173,15 +153,9 @@
     gap: calc(8 / var(--fluid-base-tablet) * 1vw);
   }
 
-  .title {
-    font-size: calc(52 / var(--fluid-base-tablet) * 1vw);
-    letter-spacing: calc(-1.25 / var(--fluid-base-tablet) * 1vw);
-  }
-
   .subtitle {
     width: auto;
     max-width: none;
-    font-size: calc(16 / var(--fluid-base-tablet) * 1vw);
   }
 
   .table {
@@ -217,8 +191,7 @@
 
 @media (max-width: 767px) {
   .compare {
-    padding: calc(32 / var(--fluid-base-mobile) * 1vw) 0
-      calc(42 / var(--fluid-base-mobile) * 1vw);
+    padding-inline: 0;
     gap: calc(32 / var(--fluid-base-mobile) * 1vw);
   }
 
@@ -229,16 +202,9 @@
     gap: calc(8 / var(--fluid-base-mobile) * 1vw);
   }
 
-  .title {
-    font-size: calc(32 / var(--fluid-base-mobile) * 1vw);
-    line-height: calc(40 / 32);
-    letter-spacing: calc(-1 / var(--fluid-base-mobile) * 1vw);
-  }
-
   .subtitle {
     width: 100%;
     max-width: none;
-    font-size: calc(14 / var(--fluid-base-mobile) * 1vw);
   }
 
   .scroll {

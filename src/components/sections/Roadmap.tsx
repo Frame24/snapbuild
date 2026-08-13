@@ -1,5 +1,6 @@
 import type { CSSProperties } from 'react'
 import { cx } from '../../lib/cx'
+import section from '../ui/Section.module.css'
 import { useReveal } from '../../hooks/useReveal'
 import { useDragScroll } from '../../hooks/useDragScroll'
 import { ROADMAP_ITEMS, ROADMAP_PROGRESS } from '../../content/roadmap'
@@ -12,16 +13,16 @@ export function Roadmap() {
   return (
     <section
       ref={sectionRef}
-      className={`${styles.roadmap} reveal`}
+      className={cx(section.shell, section.flush, styles.roadmap, 'reveal')}
       id="roadmap"
       aria-labelledby="roadmap-title"
       style={{ '--rmap-progress': ROADMAP_PROGRESS } as CSSProperties}
     >
       <header className={styles.header}>
-        <h2 className={styles.title} id="roadmap-title">
+        <h2 className={section.title} id="roadmap-title">
           Каждый день - новый релиз
         </h2>
-        <p className={styles.subtitle}>Приоритизируем бэклог для ваших целей</p>
+        <p className={section.subtitle}>Приоритизируем бэклог для ваших целей</p>
       </header>
 
       <div ref={scrollerRef} className={styles.scroller}>

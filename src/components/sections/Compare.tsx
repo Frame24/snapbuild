@@ -1,4 +1,5 @@
 import { CheckIcon } from '../ui/CheckIcon'
+import section from '../ui/Section.module.css'
 import { cx } from '../../lib/cx'
 import { useReveal } from '../../hooks/useReveal'
 import { COMPARE_HEAD, COMPARE_ROWS, type CompareCell } from '../../content/compare'
@@ -38,15 +39,15 @@ export function Compare() {
   return (
     <section
       ref={sectionRef}
-      className={`${styles.compare} reveal`}
+      className={cx(section.shell, styles.compare, 'reveal')}
       id="compare"
       aria-labelledby="compare-title"
     >
       <header className={styles.header}>
-        <h2 className={styles.title} id="compare-title">
+        <h2 className={cx(section.title, styles.title)} id="compare-title">
           Почему команды выбирают Снэпбилд
         </h2>
-        <p className={styles.subtitle}>
+        <p className={cx(section.subtitle, styles.subtitle)}>
           Вы получаете не редактор, а результат: готовые маркетинговые материалы
           без проблем с настройками
         </p>

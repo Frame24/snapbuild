@@ -1,6 +1,8 @@
 import { useEffect, useId, useRef, useState, type FormEvent, type ReactNode } from 'react'
 import { CheckIcon } from '../ui/CheckIcon'
 import { Button } from '../ui/Button'
+import section from '../ui/Section.module.css'
+import { cx } from '../../lib/cx'
 import { useReveal } from '../../hooks/useReveal'
 import {
   DEMO_POINTS,
@@ -71,16 +73,16 @@ export function DemoForm() {
   return (
     <section
       ref={sectionRef}
-      className={`${styles.section} reveal`}
+      className={cx(section.shell, 'reveal')}
       id="demo"
       aria-labelledby="demo-title"
     >
       <div className={styles.layout}>
         <div className={styles.intro}>
-          <h2 className={styles.title} id="demo-title">
+          <h2 className={section.title} id="demo-title">
             Запросите демо
           </h2>
-          <p className={styles.subtitle}>
+          <p className={cx(section.subtitle, styles.subtitle)}>
             Покажем, как ваша дизайн-система становится законом для сайтов,
             баннеров, видео и презентаций
           </p>
@@ -96,7 +98,7 @@ export function DemoForm() {
           </ul>
         </div>
 
-        <div className={styles.card}>
+        <div className={cx(section.card, styles.card)}>
           {sentTo ? (
             <div className={styles.success} role="status" aria-live="polite">
               <span className={styles.successMark} aria-hidden="true">

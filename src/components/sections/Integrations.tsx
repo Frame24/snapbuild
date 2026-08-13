@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import pills from '../ui/Pills.module.css'
+import section from '../ui/Section.module.css'
 import { useReveal } from '../../hooks/useReveal'
 import { cx } from '../../lib/cx'
 import { centerInScroller } from '../../lib/media'
@@ -25,16 +26,16 @@ export function Integrations() {
   return (
     <section
       ref={sectionRef}
-      className={`${styles.section} reveal`}
+      className={cx(section.shell, styles.section, 'reveal')}
       id="integrations"
       aria-labelledby="integrations-title"
     >
       <header className={styles.header}>
         <div className={styles.heading}>
-          <h2 className={styles.title} id="integrations-title">
+          <h2 className={section.title} id="integrations-title">
             Встраивается в ваш стек
           </h2>
-          <p className={styles.subtitle}>
+          <p className={cx(section.subtitle, styles.subtitle)}>
             Figma, Git, CI/CD и модели - в том же контуре, где уже работает
             команда
           </p>

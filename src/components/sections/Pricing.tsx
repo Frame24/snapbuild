@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { CheckIcon } from '../ui/CheckIcon'
+import section from '../ui/Section.module.css'
 import { cx } from '../../lib/cx'
 import { useReveal } from '../../hooks/useReveal'
 import {
@@ -17,16 +18,16 @@ export function Pricing() {
   return (
     <section
       ref={sectionRef}
-      className={`${styles.section} reveal`}
+      className={cx(section.shell, styles.section, 'reveal')}
       id="pricing"
       aria-labelledby="pricing-title"
     >
       <header className={styles.header}>
-        <div className={styles.heading}>
-          <h2 className={styles.title} id="pricing-title">
+        <div className={section.heading}>
+          <h2 className={section.title} id="pricing-title">
             Тарифы под масштаб команды
           </h2>
-          <p className={styles.subtitle}>
+          <p className={cx(section.subtitle, styles.subtitle)}>
             От отдела маркетинга до контура безопасности. Счёт и внедрение
             обсуждаем на демо.
           </p>
@@ -63,7 +64,7 @@ export function Pricing() {
           return (
             <article
               key={plan.id}
-              className={cx(styles.card, plan.featured && styles.featured)}
+              className={cx(section.card, styles.card, plan.featured && styles.featured)}
             >
               {plan.featured ? (
                 <span className={styles.badge}>{plan.badge}</span>

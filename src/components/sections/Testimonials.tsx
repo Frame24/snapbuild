@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { assetUrl } from '../../lib/assets'
 import { cx } from '../../lib/cx'
+import section from '../ui/Section.module.css'
 import { prefersReducedMotion } from '../../lib/media'
 import { useDragScroll } from '../../hooks/useDragScroll'
 import { useReveal } from '../../hooks/useReveal'
@@ -173,16 +174,16 @@ export function Testimonials() {
   return (
     <section
       ref={sectionRef}
-      className={`${styles.section} reveal`}
+      className={cx(section.shell, section.flush, styles.section, 'reveal')}
       id="testimonials"
       aria-labelledby="testimonials-title"
     >
       <header className={styles.header}>
-        <div className={styles.heading}>
-          <h2 className={styles.title} id="testimonials-title">
+        <div className={section.heading}>
+          <h2 className={section.title} id="testimonials-title">
             Команды, которым важен бренд
           </h2>
-          <p className={styles.subtitle}>
+          <p className={cx(section.subtitle, styles.subtitle)}>
             Как отделы перестают собирать материалы вручную и перестают
             согласовывать каждое отклонение от системы
           </p>
@@ -217,7 +218,7 @@ export function Testimonials() {
       >
         <div className={styles.track}>
           {TESTIMONIALS.map((item) => (
-            <article key={item.id} className={styles.card} data-card>
+            <article key={item.id} className={cx(section.card, styles.card)} data-card>
               <img
                 className={styles.media}
                 src={assetUrl(item.image)}

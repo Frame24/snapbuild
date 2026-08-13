@@ -73,6 +73,7 @@
 
   /* Контейнер и отступы секций */
   --container-max: 1440px;
+  --section-pad-top: calc(32 / var(--fluid-base-desktop) * 1vw);
   --section-pad-y: calc(96 / var(--fluid-base-desktop) * 1vw);
   --section-pad-x: calc(40 / var(--fluid-base-desktop) * 1vw);
   --section-gap: calc(40 / var(--fluid-base-desktop) * 1vw);
@@ -102,6 +103,7 @@
 
 @media (max-width: 1023px) {
   :root {
+    --section-pad-top: calc(32 / var(--fluid-base-tablet) * 1vw);
     --section-pad-y: calc(60 / var(--fluid-base-tablet) * 1vw);
     --section-pad-x: calc(20 / var(--fluid-base-tablet) * 1vw);
     --section-gap: calc(40 / var(--fluid-base-tablet) * 1vw);
@@ -116,7 +118,8 @@
 
 @media (max-width: 767px) {
   :root {
-    --section-pad-y: calc(48 / var(--fluid-base-mobile) * 1vw);
+    --section-pad-top: calc(32 / var(--fluid-base-mobile) * 1vw);
+    --section-pad-y: calc(42 / var(--fluid-base-mobile) * 1vw);
     --section-pad-x: calc(16 / var(--fluid-base-mobile) * 1vw);
     --section-gap: calc(32 / var(--fluid-base-mobile) * 1vw);
     --card-pad: calc(16 / var(--fluid-base-mobile) * 1vw);

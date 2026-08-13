@@ -1,5 +1,7 @@
 import { assetUrl } from '../../lib/assets'
+import { cx } from '../../lib/cx'
 import { useReveal } from '../../hooks/useReveal'
+import section from '../ui/Section.module.css'
 import { SECURITY_POINTS } from '../../content/security'
 import styles from './Security.module.css'
 
@@ -9,11 +11,11 @@ export function Security() {
   return (
     <section
       ref={sectionRef}
-      className={`${styles.features} reveal`}
+      className={cx(section.shell, styles.features, 'reveal')}
       id="features"
       aria-labelledby="features-title"
     >
-      <h2 className={styles.title} id="features-title">
+      <h2 className={cx(section.title, styles.title)} id="features-title">
         Безопасность без компромиссов
       </h2>
       <div className={styles.points}>

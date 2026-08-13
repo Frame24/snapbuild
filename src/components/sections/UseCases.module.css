@@ -1,10 +1,6 @@
 .section {
   --use-case-rule: max(1px, calc(1 / var(--fluid-base-desktop) * 1vw));
-  padding: calc(32 / var(--fluid-base-desktop) * 1vw)
-    calc(40 / var(--fluid-base-desktop) * 1vw)
-    calc(128 / var(--fluid-base-desktop) * 1vw);
-  background: var(--color-bg-painted);
-  color: var(--color-text);
+  padding-bottom: calc(128 / var(--fluid-base-desktop) * 1vw);
 }
 
 .inner {
@@ -25,14 +21,10 @@
 }
 
 .title {
-  margin: 0;
   width: 100%;
   font-weight: 400;
-  color: var(--color-text);
   white-space: pre-line;
   font-size: calc(46 / var(--fluid-base-desktop) * 1vw);
-  line-height: 1.2308;
-  letter-spacing: calc(-1 / var(--fluid-base-desktop) * 1vw);
 }
 
 .wide {
@@ -175,9 +167,7 @@
 @media (max-width: 1023px) {
   .section {
     --use-case-rule: max(1px, calc(1 / var(--fluid-base-tablet) * 1vw));
-    padding: calc(32 / var(--fluid-base-tablet) * 1vw)
-      calc(20 / var(--fluid-base-tablet) * 1vw)
-      calc(80 / var(--fluid-base-tablet) * 1vw);
+    padding-bottom: calc(80 / var(--fluid-base-tablet) * 1vw);
   }
 
   .inner {
@@ -190,9 +180,7 @@
 
   .title {
     white-space: pre-wrap;
-    font-size: calc(52 / var(--fluid-base-tablet) * 1vw);
-    line-height: 1.2308;
-    letter-spacing: calc(-1 / var(--fluid-base-tablet) * 1vw);
+    font-size: var(--text-section-title);
   }
 
   .body {
@@ -244,9 +232,7 @@
 @media (max-width: 767px) {
   .section {
     --use-case-rule: max(1px, calc(1 / var(--fluid-base-mobile) * 1vw));
-    padding: calc(32 / var(--fluid-base-mobile) * 1vw)
-      calc(16 / var(--fluid-base-mobile) * 1vw)
-      calc(56 / var(--fluid-base-mobile) * 1vw);
+    padding-bottom: calc(56 / var(--fluid-base-mobile) * 1vw);
   }
 
   .inner {
@@ -255,12 +241,6 @@
 
   .header {
     gap: calc(16 / var(--fluid-base-mobile) * 1vw);
-  }
-
-  .title {
-    font-size: calc(32 / var(--fluid-base-mobile) * 1vw);
-    line-height: 1.25;
-    letter-spacing: calc(-1 / var(--fluid-base-mobile) * 1vw);
   }
 
   .wide {

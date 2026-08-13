@@ -1,5 +1,6 @@
 import { useEffect, useId, useRef, useState } from 'react'
 import pills from '../ui/Pills.module.css'
+import section from '../ui/Section.module.css'
 import { assetUrl } from '../../lib/assets'
 import { cx } from '../../lib/cx'
 import { centerInScroller } from '../../lib/media'
@@ -26,15 +27,15 @@ export function Scenarios() {
   return (
     <section
       ref={sectionRef}
-      className={`${styles.section} reveal`}
+      className={cx(section.shell, styles.section, 'reveal')}
       id="scenarios"
       aria-labelledby="scenarios-title"
     >
       <header className={styles.header}>
-        <h2 className={styles.title} id="scenarios-title">
+        <h2 className={section.title} id="scenarios-title">
           Сценарии для команд
         </h2>
-        <p className={styles.subtitle}>
+        <p className={cx(section.subtitle, styles.subtitle)}>
           Маркетинг, дизайн, продажи и продукт собирают материалы сами - в
           рамках одной дизайн-системы
         </p>
@@ -70,7 +71,7 @@ export function Scenarios() {
       </div>
 
       <div
-        className={styles.panel}
+        className={cx(section.card, styles.panel)}
         id={`${baseId}-panel`}
         role="tabpanel"
         aria-labelledby={`${baseId}-tab-${scenario.id}`}

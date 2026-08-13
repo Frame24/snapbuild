@@ -1,6 +1,8 @@
 import { PROCESS_STEPS } from '../../content/process'
 import { assetUrl } from '../../lib/assets'
+import { cx } from '../../lib/cx'
 import { useReveal } from '../../hooks/useReveal'
+import section from '../ui/Section.module.css'
 import styles from './Process.module.css'
 
 export function Process() {
@@ -9,18 +11,18 @@ export function Process() {
   return (
     <section
       ref={sectionRef}
-      className={`${styles.process} reveal`}
+      className={cx(section.shell, styles.process, 'reveal')}
       id="process"
       aria-labelledby="process-title"
     >
       <div className={styles.header}>
-        <h2 className={styles.title} id="process-title">
+        <h2 className={cx(section.title, styles.title)} id="process-title">
           <span className={styles.wide}>Одна платформа - весь маркетинг</span>
           <span className={styles.narrow}>
             Одна платформа -{'\n'}весь маркетинг
           </span>
         </h2>
-        <p className={styles.subtitle}>
+        <p className={cx(section.subtitle, styles.subtitle)}>
           Сайты, изображения, видео, баннеры и презентации - из одной идеи, в
           вашем стиле
         </p>
