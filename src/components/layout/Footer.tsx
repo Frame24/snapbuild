@@ -38,7 +38,7 @@ export function Footer() {
               src={assetUrl('images/logo.svg')}
               alt="Снэпбилд"
               width={153}
-              height={22}
+              height={24}
             />
           </a>
           <p className={styles.tagline}>
