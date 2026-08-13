@@ -20,7 +20,7 @@ export function Roadmap() {
     >
       <header className={cx(section.header, styles.header)}>
         <h2 className={section.title} id="roadmap-title">
-          Каждый день - новый релиз
+          Каждый день — новый релиз
         </h2>
         <p className={section.subtitle}>Приоритизируем бэклог для ваших целей</p>
       </header>

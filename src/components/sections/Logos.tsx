@@ -80,7 +80,7 @@ export function Logos() {
       aria-label="Команды, которые работают с платформой"
     >
       <p className={styles.eyebrow}>
-        С платформой работают команды, для которых бренд - закон
+        С платформой работают команды, для которых бренд — закон
       </p>
       <div ref={trackRef} className={styles.track}>
         <LogoSet />

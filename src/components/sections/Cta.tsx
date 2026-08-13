@@ -25,6 +25,10 @@ export function Cta() {
               а&nbsp;не&nbsp;дни
             </span>
           </h2>
+          <p className={styles.subtitle}>
+            Выстройте маркетинг в&nbsp;единый поток — от&nbsp;первой идеи
+            до&nbsp;финального взаимодействия с&nbsp;клиентом.
+          </p>
         </div>
         <div className={styles.actions}>
           <a className={styles.btn} href="#demo">

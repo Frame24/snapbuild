@@ -17,14 +17,16 @@ export function Process() {
     >
       <div className={section.header}>
         <h2 className={cx(section.title, styles.title)} id="process-title">
-          <span className={styles.wide}>Одна платформа - весь маркетинг</span>
+          <span className={styles.wide}>
+            Одна платформа — весь маркетинг
+          </span>
           <span className={styles.narrow}>
-            Одна платформа -{'\n'}весь маркетинг
+            Одна платформа —{'\n'}весь маркетинг
           </span>
         </h2>
         <p className={section.subtitle}>
-          Сайты, изображения, видео, баннеры и презентации - из одной идеи, в
-          вашем стиле
+          Сайты, изображения, видео, баннеры и презентации — из одной идеи,
+          в вашем стиле
         </p>
       </div>
 

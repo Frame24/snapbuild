@@ -119,6 +119,10 @@
   display: none;
 }
 
+.subtitle {
+  display: none;
+}
+
 .actions {
   display: flex;
   flex-direction: row;

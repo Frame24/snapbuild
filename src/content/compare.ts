@@ -42,10 +42,10 @@ export const COMPARE_ROWS: CompareRow[] = [
     label: 'Визуальный редактор',
     cells: [
       { kind: 'check', label: '+ ИИ' },
-      { kind: 'text', text: '-' },
+      { kind: 'text', text: '—' },
       { kind: 'check' },
-      { kind: 'text', text: '-' },
-      { kind: 'text', text: '-' },
+      { kind: 'text', text: '—' },
+      { kind: 'text', text: '—' },
     ],
   },
   {
