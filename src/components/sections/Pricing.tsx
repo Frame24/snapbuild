@@ -27,7 +27,7 @@ export function Pricing() {
           <h2 className={section.title} id="pricing-title">
             Тарифы под масштаб команды
           </h2>
-          <p className={cx(section.subtitle, styles.subtitle)}>
+          <p className={section.subtitle}>
             От отдела маркетинга до контура безопасности. Счёт и внедрение
             обсуждаем на демо.
           </p>

@@ -7,10 +7,6 @@
 }
 
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: calc(8 / var(--fluid-base-desktop) * 1vw);
   padding: 0 var(--rmap-pad);
 }
 
@@ -160,10 +156,6 @@
     gap: calc(56 / var(--fluid-base-tablet) * 1vw);
   }
 
-  .header {
-    gap: calc(8 / var(--fluid-base-tablet) * 1vw);
-  }
-
   .track::before,
   .track::after {
     top: calc(16 / var(--fluid-base-tablet) * 1vw);
@@ -219,12 +211,6 @@
     --rmap-col: calc(260 / var(--fluid-base-mobile) * 1vw);
     --rmap-pad: calc(16 / var(--fluid-base-mobile) * 1vw);
     gap: calc(32 / var(--fluid-base-mobile) * 1vw);
-  }
-
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: calc(8 / var(--fluid-base-mobile) * 1vw);
   }
 
   .track {

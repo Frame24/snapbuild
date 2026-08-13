@@ -82,7 +82,7 @@
 
   /* Размеры текста */
   --text-section-title: calc(52 / var(--fluid-base-desktop) * 1vw);
-  --text-section-title-weight: var(--font-weight-medium);
+  --text-section-title-weight: 550;
   --text-section-title-tracking: calc(-1 / var(--fluid-base-desktop) * 1vw);
   --text-body: calc(16 / var(--fluid-base-desktop) * 1vw);
   --text-card-title: calc(24 / var(--fluid-base-desktop) * 1vw);

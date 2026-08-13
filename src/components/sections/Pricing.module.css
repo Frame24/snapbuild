@@ -10,10 +10,6 @@
   gap: calc(24 / var(--fluid-base-desktop) * 1vw);
 }
 
-.subtitle {
-  max-width: 36em;
-}
-
 .toggle {
   display: inline-flex;
   flex: 0 0 auto;

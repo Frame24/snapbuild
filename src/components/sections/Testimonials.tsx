@@ -183,7 +183,7 @@ export function Testimonials() {
           <h2 className={section.title} id="testimonials-title">
             Команды, которым важен бренд
           </h2>
-          <p className={cx(section.subtitle, styles.subtitle)}>
+          <p className={section.subtitle}>
             Как отделы перестают собирать материалы вручную и перестают
             согласовывать каждое отклонение от системы
           </p>

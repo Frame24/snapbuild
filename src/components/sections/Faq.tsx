@@ -22,11 +22,11 @@ export function Faq() {
       id="faq"
       aria-labelledby="faq-title"
     >
-      <div className={styles.header}>
+      <div className={section.header}>
         <h2 className={section.title} id="faq-title">
           Часто задаваемые вопросы
         </h2>
-        <p className={cx(section.subtitle, styles.subtitle)}>
+        <p className={section.subtitle}>
           Ответы, которые помогут вам принять решение уверенно - без рисков для
           бренда и безопасности
         </p>

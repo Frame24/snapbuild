@@ -43,8 +43,8 @@ export function Compare() {
       id="compare"
       aria-labelledby="compare-title"
     >
-      <header className={styles.header}>
-        <h2 className={cx(section.title, styles.title)} id="compare-title">
+      <header className={cx(section.header, styles.header)}>
+        <h2 className={section.title} id="compare-title">
           Почему команды выбирают Снэпбилд
         </h2>
         <p className={cx(section.subtitle, styles.subtitle)}>

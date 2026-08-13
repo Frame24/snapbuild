@@ -31,11 +31,11 @@ export function Scenarios() {
       id="scenarios"
       aria-labelledby="scenarios-title"
     >
-      <header className={styles.header}>
+      <header className={section.header}>
         <h2 className={section.title} id="scenarios-title">
           Сценарии для команд
         </h2>
-        <p className={cx(section.subtitle, styles.subtitle)}>
+        <p className={section.subtitle}>
           Маркетинг, дизайн, продажи и продукт собирают материалы сами - в
           рамках одной дизайн-системы
         </p>

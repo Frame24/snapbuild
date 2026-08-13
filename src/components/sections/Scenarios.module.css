@@ -2,19 +2,6 @@
   gap: calc(32 / var(--fluid-base-desktop) * 1vw);
 }
 
-.header {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: calc(8 / var(--fluid-base-desktop) * 1vw);
-}
-
-.subtitle {
-  max-width: calc(360 / var(--fluid-base-desktop) * 1vw);
-  text-align: right;
-}
-
 .panel {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
@@ -211,17 +198,6 @@
 @media (max-width: 1023px) {
   .section {
     gap: calc(32 / var(--fluid-base-tablet) * 1vw);
-  }
-
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: calc(8 / var(--fluid-base-tablet) * 1vw);
-  }
-
-  .subtitle {
-    max-width: none;
-    text-align: left;
   }
 
   .panel {

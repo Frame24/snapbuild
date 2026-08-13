@@ -3,20 +3,8 @@
   padding-bottom: calc(128 / var(--fluid-base-desktop) * 1vw);
 }
 
-.header {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: calc(8 / var(--fluid-base-desktop) * 1vw);
-}
-
 .title {
   white-space: pre-line;
-}
-
-.subtitle {
-  max-width: none;
-  font-weight: 400;
 }
 
 .wide {
@@ -88,10 +76,6 @@
     padding-bottom: calc(80 / var(--fluid-base-tablet) * 1vw);
   }
 
-  .header {
-    gap: calc(8 / var(--fluid-base-tablet) * 1vw);
-  }
-
   .grid {
     gap: 16px;
   }
@@ -122,10 +106,6 @@
 @media (max-width: 767px) {
   .process {
     gap: calc(32 / var(--fluid-base-mobile) * 1vw);
-  }
-
-  .header {
-    gap: calc(8 / var(--fluid-base-mobile) * 1vw);
   }
 
   .wide {

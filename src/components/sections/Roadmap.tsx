@@ -18,7 +18,7 @@ export function Roadmap() {
       aria-labelledby="roadmap-title"
       style={{ '--rmap-progress': ROADMAP_PROGRESS } as CSSProperties}
     >
-      <header className={styles.header}>
+      <header className={cx(section.header, styles.header)}>
         <h2 className={section.title} id="roadmap-title">
           Каждый день - новый релиз
         </h2>

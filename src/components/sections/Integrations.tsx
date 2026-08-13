@@ -31,11 +31,11 @@ export function Integrations() {
       aria-labelledby="integrations-title"
     >
       <header className={styles.header}>
-        <div className={styles.heading}>
+        <div className={section.heading}>
           <h2 className={section.title} id="integrations-title">
             Встраивается в ваш стек
           </h2>
-          <p className={cx(section.subtitle, styles.subtitle)}>
+          <p className={section.subtitle}>
             Figma, Git, CI/CD и модели - в том же контуре, где уже работает
             команда
           </p>
