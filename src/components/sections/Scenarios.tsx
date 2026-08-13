@@ -1,4 +1,5 @@
 import { useEffect, useId, useRef, useState } from 'react'
+import { assetUrl } from '../../lib/assets'
 import { useReveal } from '../../hooks/useReveal'
 import { SCENARIOS } from '../../content/scenarios'
 import styles from './Scenarios.module.css'
@@ -96,6 +97,18 @@ export function Scenarios() {
           <p className={styles.kicker}>{scenario.kicker}</p>
           <h3 className={styles.heading}>{scenario.title}</h3>
           <p className={styles.lead}>{scenario.desc}</p>
+        </div>
+
+        <div className={styles.mediaWrap}>
+          <img
+            className={styles.media}
+            src={assetUrl(scenario.image)}
+            alt={scenario.imageAlt}
+            width={640}
+            height={400}
+            loading="lazy"
+            decoding="async"
+          />
         </div>
 
         <ol className={styles.steps}>

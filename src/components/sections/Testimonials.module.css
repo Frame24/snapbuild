@@ -105,7 +105,6 @@
   overflow-x: auto;
   scrollbar-width: none;
   cursor: grab;
-  scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -116,13 +115,13 @@
 .scroller[data-dragging='true'] {
   cursor: grabbing;
   user-select: none;
-  scroll-snap-type: none;
 }
 
 .track {
+  --card-w: calc(560 / var(--fluid-base-desktop) * 1vw);
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: calc(560 / var(--fluid-base-desktop) * 1vw);
+  grid-auto-columns: var(--card-w);
   gap: calc(16 / var(--fluid-base-desktop) * 1vw);
   width: max-content;
   padding-inline: var(--t-pad);
@@ -131,13 +130,9 @@
 .card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: calc(32 / var(--fluid-base-desktop) * 1vw);
-  min-height: calc(280 / var(--fluid-base-desktop) * 1vw);
-  padding: calc(32 / var(--fluid-base-desktop) * 1vw);
+  overflow: hidden;
   background: var(--color-surface);
   border-radius: var(--radius-card);
-  scroll-snap-align: start;
   transition: box-shadow 0.3s var(--ease-out);
 }
 
@@ -147,12 +142,35 @@
   }
 }
 
+.media {
+  display: block;
+  width: 100%;
+  height: calc(280 / var(--fluid-base-desktop) * 1vw);
+  object-fit: cover;
+  background: var(--color-surface-muted);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: calc(16 / var(--fluid-base-desktop) * 1vw);
+  padding: calc(24 / var(--fluid-base-desktop) * 1vw);
+}
+
 .quote {
   margin: 0;
   font-weight: 500;
-  font-size: calc(20 / var(--fluid-base-desktop) * 1vw);
+  font-size: calc(18 / var(--fluid-base-desktop) * 1vw);
   line-height: 1.4;
   letter-spacing: calc(-0.4 / var(--fluid-base-desktop) * 1vw);
+}
+
+.result {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: calc(14 / var(--fluid-base-desktop) * 1vw);
+  line-height: 1.4286;
+  font-weight: 500;
 }
 
 .author {
@@ -252,17 +270,29 @@
   }
 
   .track {
-    grid-auto-columns: calc(520 / var(--fluid-base-tablet) * 1vw);
+    --card-w: calc(520 / var(--fluid-base-tablet) * 1vw);
     gap: 12px;
   }
 
   .card {
-    min-height: calc(260 / var(--fluid-base-tablet) * 1vw);
-    padding: calc(24 / var(--fluid-base-tablet) * 1vw);
+    min-height: 0;
+  }
+
+  .media {
+    height: calc(220 / var(--fluid-base-tablet) * 1vw);
+  }
+
+  .body {
+    gap: calc(12 / var(--fluid-base-tablet) * 1vw);
+    padding: calc(20 / var(--fluid-base-tablet) * 1vw);
   }
 
   .quote {
-    font-size: calc(18 / var(--fluid-base-tablet) * 1vw);
+    font-size: calc(16 / var(--fluid-base-tablet) * 1vw);
+  }
+
+  .result {
+    font-size: calc(14 / var(--fluid-base-tablet) * 1vw);
   }
 
   .name {
@@ -298,19 +328,31 @@
   }
 
   .track {
-    grid-auto-columns: calc(300 / var(--fluid-base-mobile) * 1vw);
+    --card-w: calc(300 / var(--fluid-base-mobile) * 1vw);
     gap: 10px;
   }
 
   .card {
-    min-height: calc(240 / var(--fluid-base-mobile) * 1vw);
-    padding: calc(16 / var(--fluid-base-mobile) * 1vw);
+    min-height: 0;
     border-radius: 16px;
   }
 
+  .media {
+    height: calc(168 / var(--fluid-base-mobile) * 1vw);
+  }
+
+  .body {
+    gap: calc(12 / var(--fluid-base-mobile) * 1vw);
+    padding: calc(16 / var(--fluid-base-mobile) * 1vw);
+  }
+
   .quote {
-    font-size: calc(16 / var(--fluid-base-mobile) * 1vw);
+    font-size: calc(15 / var(--fluid-base-mobile) * 1vw);
     letter-spacing: 0;
+  }
+
+  .result {
+    font-size: calc(13 / var(--fluid-base-mobile) * 1vw);
   }
 
   .name {

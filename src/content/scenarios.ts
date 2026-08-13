@@ -9,6 +9,8 @@ export type Scenario = {
   kicker: string
   title: string
   desc: string
+  image: string
+  imageAlt: string
   steps: ScenarioStep[]
   results: string[]
 }
@@ -20,6 +22,8 @@ export const SCENARIOS: Scenario[] = [
     kicker: 'Кампания целиком',
     title: 'Бриф утром - пакет материалов в тот же день',
     desc: 'Лендинг, баннеры, изображения и ролики собираются из одной идеи. Стиль не согласуют отдельно: он уже встроен в генерацию.',
+    image: 'images/use-cases-tab4-item2.webp',
+    imageAlt: 'Баннеры и креативы кампании в одном стиле',
     steps: [
       {
         title: 'Отдаёте описание',
@@ -42,6 +46,8 @@ export const SCENARIOS: Scenario[] = [
     kicker: 'Дизайн-система как закон',
     title: 'Компоненты и токены нельзя обойти',
     desc: 'AI не предлагает цвет, сетку или кнопку вне библиотеки. Правки идут в редакторе, а не через бесконечные ревью "почти как в макете".',
+    image: 'images/use-cases-tab1-item2.webp',
+    imageAlt: 'Компоненты и токены дизайн-системы в интерфейсе',
     steps: [
       {
         title: 'Подключаете систему',
@@ -64,6 +70,8 @@ export const SCENARIOS: Scenario[] = [
     kicker: 'К встрече, а не к пятнице',
     title: 'Питч и КП в вашем стиле за час',
     desc: 'Презентация, one-pager и витрина продукта выглядят как материалы бренда, а не как чужой шаблон. Персонализация под клиента не ломает систему.',
+    image: 'images/use-cases-tab5-item2.webp',
+    imageAlt: 'Питч-дек и слайды в фирменном стиле',
     steps: [
       {
         title: 'Собираете бриф клиента',
@@ -86,6 +94,8 @@ export const SCENARIOS: Scenario[] = [
     kicker: 'Без слота в бэклоге дизайна',
     title: 'Страница фичи за спринт, а не за квартал',
     desc: 'Продакт собирает лендинг, онбординг или дашборд в той же системе, что и продукт. Сетка и состояния кнопок не разъезжаются.',
+    image: 'images/use-cases-tab2-item2.webp',
+    imageAlt: 'Продуктовая страница из компонентов библиотеки',
     steps: [
       {
         title: 'Описываете фичу',
